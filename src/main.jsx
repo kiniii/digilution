@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Login_Email from './Login/login'
+import App from './App'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Login_Email />
+    <App />
   </React.StrictMode>,
 )

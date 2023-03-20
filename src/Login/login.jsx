@@ -1,9 +1,10 @@
 import Background from "./assets/background.svg"
+import React from 'react'
 import Logo from "./assets/logo.svg"
 import Login_Password from "./login-password"
 import './login.css'
 
-export const Login_Email = () => {
+const Login_Email = () => {
     /*Login button goes to the password page */
     const login = () => {
         <Login_Password />
