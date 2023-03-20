@@ -3,7 +3,11 @@ import Background from "./assets/background.svg"
 import Logo from "./assets/logo.svg"
 import './login.css'
 
-function Login_Password(){
+const Login_Password = () =>{
+    const test = () => (
+        alert("test")
+    )
+
     return (
        <div className='login-page'>  
             <div className='login'>
@@ -11,7 +15,7 @@ function Login_Password(){
                 <label className="titel-login">Welkom terug</label>
                 <input className="input" type="password" placeholder='password' />
                 <div className='button-position'>
-                    <button className='button' onClick={Dashboard}>Log in</button>
+                    <button className='button' onClick={test}>Log in</button>
                 </div>
             </div>
              <img src={Background} className="background" alt="background digilution" /> 
