@@ -10,8 +10,8 @@ const Dashboard = () => {
     }, [count]); 
     return (
         <>
-        <Navigation />
-        <Header />
+            <Navigation />
+            <Header />
             <button onClick={() => setCount(count + 1)}>Count</button>
         </>
     )
