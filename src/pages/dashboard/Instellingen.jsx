@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/Layout"
 
 const Dashboard = () => {
-    const [count, setCount] = useState(0);
-
     return (
-        <Layout title="Dashboard">
+        <Layout title="Instellingen">
             <button onClick={() => setCount(count + 1)}>Count</button>
         </Layout>
     )

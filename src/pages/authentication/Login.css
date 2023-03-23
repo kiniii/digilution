@@ -110,3 +110,15 @@ line-height: 29px;
 color: #FFFFFF;
 }
 
+.herstel{
+    position: absolute;
+        left: 248px;
+        top: 250px;
+    align-items: center;
+        text-align: center;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 29px;
+        color: #FFFFFF;
+}

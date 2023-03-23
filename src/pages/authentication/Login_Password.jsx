@@ -17,6 +17,10 @@ const Login = () => {
         setPassword(event.target.value)
     }
 
+    const handleHerstel = () => {
+        alert("link herstel")
+    }
+
     return (
         <>
             <div className='login-page'>  
@@ -24,6 +28,7 @@ const Login = () => {
                     <img src={Logo} className="logo" alt="logo digilution" />
                     <label className="titel-login">Welkom terug</label>
                     <input className="input" type="password" value={password} onChange={handlePassword} placeholder="password" />
+                    <a className="herstel" href="" onClick={handleHerstel}>Wachtwoord vergeten?</a>
                     <div className='button-position'>
                         <button className='button' onClick={handleLogin}>Log in</button> 
                     </div>
