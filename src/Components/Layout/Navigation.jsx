@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from "./assets/logo.svg"
+import Logo from "../assets/logo.svg"
 import styled from "styled-components";
 
 import { FaHome } from "react-icons/fa";
@@ -69,7 +69,7 @@ const Navigation = () => {
     height: 1024px;
     left: 0px;
     top: 0px;
-    background-color: #161510;
+    background-color: ${({theme: {colors} }) => colors.primary};
     `
     const LogoNav = styled.img` 
     pposition: absolute;
@@ -77,7 +77,6 @@ const Navigation = () => {
     right: 8.84%;
     top: 4.88%;
     bottom: 89.84%;
-
     width: 270px;
     height: auto;
     `
@@ -86,14 +85,8 @@ const Navigation = () => {
     height: 100%;
     margin: 0;
     padding-left: 0;
-    &:.icon{
-        height: 25px;
-        width: 22px;
-        color: #FFFFFF;
-        margin-left: 30%;
-    }
     `
-    const Welcome = styled.label` 
+    const Welcome = styled.h1` 
     position: absolute;
     width: 328px;
     height: 64px;
@@ -101,15 +94,8 @@ const Navigation = () => {
     right: 0.09%;
     top: 16.02%;
     bottom: 77.73%;
-
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 28px;
     align-items: center;
     text-align: center;
-    color: #FFFFFF; 
     `
     const NavItem = styled.a` 
     text-decoration: none;
@@ -123,17 +109,11 @@ const Navigation = () => {
         background: linear-gradient(270deg, #F95B1C 0%, rgba(255, 255, 255, 0) 33.84%);
     }   
     `
-    const Text = styled.p` 
+    const Text = styled.h3` 
     position: absolute;
     width: 180px;
     right: 0%;
     text-align: left;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 25px;
-    color: #FFFFFF;
     `
     const Pos1 = styled.li` 
     position: absolute;

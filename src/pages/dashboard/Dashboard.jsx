@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../../components/Layout"
+import Layout from "../../components/Layout/Layout"
 
 const Dashboard = () => {
     const [count, setCount] = useState(0);

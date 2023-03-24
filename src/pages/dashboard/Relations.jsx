@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import RelationInfo from "../../components/RelationInfo"
-import Layout from "../../components/Layout"
+import RelationInfo from "../../components/Layout/RelationInfo"
+import Layout from "../../components/Layout/Layout"
 
 const Dashboard = () => {
     const [count, setCount] = useState(0);
