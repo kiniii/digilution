@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout"
 
-const Dashboard = () => {
+const Kalender = () => {
     return (
         <Layout title="Kalender">
             <button onClick={() => setCount(count + 1)}>Count</button>
@@ -9,4 +9,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default Kalender;

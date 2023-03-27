@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 import Background from "./assets/background.svg"
 import Logo from "./assets/logo.svg"
+import Button from "../../components/buttons/Button";
+import ButtonField from "../../components/buttons/ButtonField";
+import TextField from "../../components/fields/TextField";
 
 
 const Login = () => {
@@ -26,7 +29,9 @@ const Login = () => {
                     <LogoImage src={Logo} alt="logo digilution" />
                     <Welcome>Welkom terug</Welcome>
                     <Input type="email" value={email} onChange={handleEmail} placeholder="email" />
-                    <ButtonPos onClick={handleLogin}>Log in</ButtonPos> 
+                    <ButtonPos> 
+                        <Button onClick={handleLogin}>Log in</Button>
+                    </ButtonPos> 
                 </LoginPlace>
                 <BackgroundImage src={Background} alt="background digilution" /> 
             </LoginPage>
@@ -61,13 +66,10 @@ const LogoImage = styled.img`
     width: 270px;
     height: auto;
     `   
-const ButtonPos = styled.button` 
+const ButtonPos = styled(ButtonField)` 
     position: absolute;
     left: 248px;
     top: 306px;
-    box-sizing: border-box;
-    width: 166px;
-    height: 60px;
     `     
 const Welcome = styled.h1` 
     position: absolute;
@@ -77,7 +79,7 @@ const Welcome = styled.h1`
     top: 112px;
     text-align: center;
     `
-const Input = styled.input` 
+const Input = styled(TextField)` 
     position: absolute;
     width: 340px;
     height: 40px;

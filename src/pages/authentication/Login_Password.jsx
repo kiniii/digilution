@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 import Background from "./assets/background.svg"
 import Logo from "./assets/logo.svg"
+import Button from "../../components/buttons/Button";
+import TextField from "../../components/fields/TextField";
+import ButtonField from "../../components/buttons/ButtonField";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -30,7 +33,9 @@ const Login = () => {
                     <Welcome>Welkom terug</Welcome>
                     <Input type="password" value={password} onChange={handlePassword} placeholder="password"/>
                     <LinkHerstel href="" onClick={handleHerstel}>Wachtwoord vergeten?</LinkHerstel>
-                    <ButtonPos onClick={handleLogin}>Log in</ButtonPos> 
+                    <ButtonPos> 
+                        <Button onClick={handleLogin}>Log in</Button>
+                    </ButtonPos>  
                 </LoginPlace>
                 <BackgroundImage src={Background} alt="background digilution" /> 
             </LoginPage>
@@ -65,7 +70,7 @@ const LogoImage = styled.img`
     width: 270px;
     height: auto;
     `   
-const ButtonPos = styled.button` 
+const ButtonPos = styled(ButtonField)` 
     position: absolute;
     left: 248px;
     top: 306px;
@@ -81,10 +86,8 @@ const Welcome = styled.h1`
     top: 112px;
     text-align: center;
     `
-const Input = styled.input` 
+const Input = styled(TextField)` 
     position: absolute;
-    width: 340px;
-    height: 40px;
     padding-left: 10px;
     left: 155px;    
     top: 187px;
