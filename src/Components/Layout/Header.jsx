@@ -73,6 +73,7 @@ const Profile = styled.img`
     right: 5%;
     top: 23px;
     border-radius: 64px;
+    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
     background-color: ${({theme: {colors} }) => colors.secondary};
     `
 export default Header;

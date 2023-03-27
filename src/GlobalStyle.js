@@ -65,6 +65,34 @@ const Global = createGlobalStyle`
         font-weight: ${({theme: {font} }) => font.pFontWeight};
         color:  ${({theme: {colors} }) => colors.white};
     }
+
+    .greenChip {
+        color: ${({theme: {statusColor} }) => statusColor.greenText};
+        background: ${({theme: {statusColor} }) => statusColor.greenBackground};
+        border-radius: 10px;
+        height: 25px;
+    }
+
+    .redChip {
+        color: ${({theme: {statusColor} }) => statusColor.redText};
+        background: ${({theme: {statusColor} }) => statusColor.redBackground};
+        border-radius: 10px;
+        height: 25px;
+    }
+
+    .yellowChip {
+        color: ${({theme: {statusColor} }) => statusColor.yellowText};
+        background: ${({theme: {statusColor} }) => statusColor.yellowBackground};
+        border-radius: 10px;
+        height: 25px;
+    }
+
+    .orangeChip {
+        color: ${({theme: {statusColor} }) => statusColor.orangeText};
+        background: ${({theme: {statusColor} }) => statusColor.orangeBackground};
+        border-radius: 10px;
+        height: 25px;
+    }
  `;
 
 export default Global;

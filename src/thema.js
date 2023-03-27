@@ -1,7 +1,7 @@
 const thema = {
     colors: {
         primary: "#161510",
-        secundary: "#f95b1c",
+        secondary: "#f95b1c",
         darkBackground: "#303030",
         lightBackground: "#939393",
         background: "#000000",

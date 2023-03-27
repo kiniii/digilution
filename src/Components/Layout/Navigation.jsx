@@ -24,37 +24,49 @@ const Navigation = () => {
                 <NavList>
                     <Pos1>
                         <NavItem href="/dashboard">
-                            <FaHome className='icon'/>
+                            <IconPos>
+                                <FaHome className='icon'/>
+                            </IconPos>
                             <Text>Dashboard</Text>
                         </NavItem>
                     </Pos1>
                     <Pos2>
                         <NavItem href="/projects">
-                            <IoIosPaper className='icon'/>
+                            <IconPos>
+                                <IoIosPaper className='icon'/>
+                            </IconPos>
                             <Text>Projecten</Text>
                         </NavItem>
                     </Pos2>
                     <Pos3>
                         <NavItem href="/relations">
-                            <BsPeopleFill className='icon'/>
+                            <IconPos>
+                                <BsPeopleFill className='icon'/>
+                            </IconPos>
                             <Text>Relaties</Text>
                         </NavItem>
                     </Pos3>
                     <Pos4>
                         <NavItem href="/calendar">
-                            <AiFillCalendar className='icon'/>
+                            <IconPos>
+                                <AiFillCalendar className='icon'/>
+                            </IconPos>
                             <Text>Kalender</Text>
                         </NavItem>
                     </Pos4>
                     <Pos5>
                         <NavItem href="/settings">
-                            <RiSettingsFill className='icon'/>
+                            <IconPos>
+                                <RiSettingsFill className='icon'/>
+                            </IconPos>
                             <Text>Instellingen</Text>
                         </NavItem>
                     </Pos5>
                     <Pos6>
                         <NavItem href="/">
-                            <RiLogoutBoxLine className='icon'/>
+                            <IconPos>
+                                <RiLogoutBoxLine className='icon'/>
+                            </IconPos>
                             <Text>Uitloggen</Text>
                         </NavItem>
                     </Pos6>
@@ -71,8 +83,12 @@ const Navigation = () => {
     top: 0px;
     background-color: ${({theme: {colors} }) => colors.primary};
     `
+    const IconPos = styled.div` 
+    position: absolute;
+    left: 25%;
+    `
     const LogoNav = styled.img` 
-    pposition: absolute;
+    position: absolute;
     left: 8.54%;
     right: 8.84%;
     top: 4.88%;
