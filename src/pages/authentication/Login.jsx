@@ -30,7 +30,7 @@ const Login = () => {
                     <Welcome>Welkom terug</Welcome>
                     <Input type="email" value={email} onChange={handleEmail} placeholder="email" />
                     <ButtonPos> 
-                        <Button onClick={handleLogin}>Log in</Button>
+                        <Button color="secondary" onClick={handleLogin}>Log in</Button>
                     </ButtonPos> 
                 </LoginPlace>
                 <BackgroundImage src={Background} alt="background digilution" /> 

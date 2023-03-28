@@ -8,9 +8,9 @@ import Popup from "../../components/Popups/Popup"
 import Search from "../../components/fields/SearchBar";
 
 const Relaties = () => {
-    const [count, setCount] = useState(0);
-
     const relations = ["alle relaties in de database"]
+
+   
 
     relations.forEach(element => {
             <RelationInfo />
@@ -27,11 +27,11 @@ const Relaties = () => {
     }
 
     return (
-        <Layout title="Instellingen">
+        <Layout title="Relaties">
             <SubHeader>
                 <Search onChange={handleSearch} placeholder="Search..." />
-                <Button onClick={() => setButtonPopup(true)}>Nieuw</Button>
-                <Button onClick={openFilter}>Filter</Button>
+                <Button color="secondary" onClick={() => setButtonPopup(true)}>Nieuw</Button>
+                <Button color="primary" onClick={openFilter}>Filter</Button>
             </SubHeader>
             
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>

@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { color } from 'styled-system';
 import ButtonField from "./ButtonField";
 
-const Button = ({children, onClick}) => {
+const Button = ({children, onClick, color}) => {
     return (
-        <StyleButton onClick={onClick}>
+        <StyleButton backgroundColor={color} onClick={onClick}>
             {children}
         </StyleButton>
     )
@@ -16,7 +17,8 @@ const StyleButton = styled(ButtonField)`
     &:hover {
         filter: brightness(120%);
     }
-    `
+    ${color};
+`
 Button.defaultProps = {
     backgroundColor: "secondary",
     color: "white"

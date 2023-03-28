@@ -34,7 +34,7 @@ const Login = () => {
                     <Input type="password" value={password} onChange={handlePassword} placeholder="password"/>
                     <LinkHerstel href="" onClick={handleHerstel}>Wachtwoord vergeten?</LinkHerstel>
                     <ButtonPos> 
-                        <Button onClick={handleLogin}>Log in</Button>
+                        <Button color="secondary" onClick={handleLogin}>Log in</Button>
                     </ButtonPos>  
                 </LoginPlace>
                 <BackgroundImage src={Background} alt="background digilution" /> 
@@ -74,9 +74,6 @@ const ButtonPos = styled(ButtonField)`
     position: absolute;
     left: 248px;
     top: 306px;
-    box-sizing: border-box;
-    width: 166px;
-    height: 60px;
     `     
 const Welcome = styled.h1` 
     position: absolute;

@@ -8,7 +8,7 @@ const Search = ({children, onChange, placeholder}) => {
             {children}
         </SearchBar>
     )
-}
+};
 
 const SearchBar = styled(TextField)`
     border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
@@ -16,6 +16,6 @@ const SearchBar = styled(TextField)`
     width: 60%;
     height: 60px;
     margin-left: 30px;
-    `
+    `;
 
 export default Search;

@@ -21,8 +21,8 @@ const Instellingen = () => {
         <Layout title="Instellingen">
             <SubHeader>
                 <Search onChange={handleSearch} placeholder="Search..." />
-                <Button onClick={() => setButtonPopup(true)}>Nieuw</Button>
-                <Button onClick={openFilter}>Filter</Button>
+                <Button color="secondary" onClick={() => setButtonPopup(true)}>Nieuw</Button>
+                <Button color="primary" onClick={openFilter}>Filter</Button>
             </SubHeader>
             
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
