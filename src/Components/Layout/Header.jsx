@@ -38,9 +38,9 @@ const Header = ({title}) => {
 
 const HeaderStyle = styled.div` 
     position: absolute;
-    width: 85%;
-    height: 111px;
-    left: 328px;
+    width: 78%;
+    padding: 20px 0px;
+    left: 22%;
     top: 0px;
     display: flex;
     background-color: ${({theme: {colors} }) => colors.primary};

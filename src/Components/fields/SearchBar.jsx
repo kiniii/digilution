@@ -15,7 +15,6 @@ const SearchBar = styled(TextField)`
     box-sizing: border-box;
     width: 60%;
     height: 60px;
-    margin-left: 30px;
     `;
 
 export default Search;

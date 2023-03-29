@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import RelationInfo from "../../components/Layout/RelationInfo"
+import RelationInfo from "../../components/fields/RelationInfo"
 import Layout from "../../components/Layout/Layout"
 import SubHeader from "../../components/Layout/SubHeader";
 import Button from "../../components/buttons/Button";

@@ -12,10 +12,11 @@ const SubHeader = ({children}) => {
 
 const SubHeaderStyle = styled.div` 
     position: absolute;
-    width: 85%;
+    justify-content: space-around;
+    width: 78%;
     padding: 30px 0px;
-    left: 328px;
-    top: 111px;
+    left: 22%;
+    top: 10%;
     display: flex;
     background-color: ${({theme: {colors} }) => colors.darkBackground};
     `

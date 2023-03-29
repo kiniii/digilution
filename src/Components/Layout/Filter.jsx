@@ -16,7 +16,7 @@ const FilterStyle = styled.div`
     height: 100%;
     padding: 0px 30px;
     right: 0px;
-    top: 231px;
+    top: 20%;
     background-color: ${({theme: {colors} }) => colors.lightBackground};
     ${display}
     `

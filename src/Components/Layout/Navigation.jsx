@@ -77,8 +77,8 @@ const Navigation = () => {
 }
     const Nav = styled.div` 
     position: fixed;
-    width: 328px;
-    height: 1024px;
+    width: 22%;
+    height: 100%;
     left: 0px;
     top: 0px;
     background-color: ${({theme: {colors} }) => colors.primary};
@@ -104,7 +104,7 @@ const Navigation = () => {
     `
     const Welcome = styled.h1` 
     position: absolute;
-    width: 328px;
+    width: 100%;
     height: 64px;
     left: 0%;
     right: 0.09%;
