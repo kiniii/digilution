@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import Navigation from "../../components/Navigation"
 import Header from "../../components/Header"
+import Layout from "../../Components/Layout";
+import Button from "../../Components/Button";
 
 const Dashboard = () => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        console.log("test")
+        console.log(`hallo ${count} test`)
     }, [count]); 
     return (
-        <>
-        <Navigation />
-        <Header />
-            <button onClick={() => setCount(count + 1)}>Count</button>
-        </>
+        <Layout title="Dashboard">
+            <Button onClick={() => setCount(count + 1)}>Count</Button>
+        </Layout>
     )
 }
 

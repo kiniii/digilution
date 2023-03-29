@@ -11,6 +11,8 @@ import Calendar from "./pages/calendar/Calendar"
 import Instellingen from "./pages/settings/Instellingen"
 import Account from "./pages/account/Account"
 import Navigation from "./components/Navigation"
+import thema from "./thema"
+import { ThemeProvider } from 'styled-components'
 
 function App() {
     const router = createBrowserRouter([
@@ -49,7 +51,9 @@ function App() {
     ])
 
     return (
-        <RouterProvider router={router}/>
+        <ThemeProvider theme={thema}>
+            <RouterProvider router={router}/>
+        </ThemeProvider>
     )
 }
 

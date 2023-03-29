@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from "./assets/logo.svg"
-import "./Navigation.css"
+import styled from "styled-components";
+
 import { FaHome } from "react-icons/fa";
 import { IoIosPaper } from "react-icons/io";
 import { BsPeopleFill } from "react-icons/bs";
@@ -9,56 +10,131 @@ import { RiSettingsFill } from "react-icons/ri";
 import { RiLogoutBoxLine } from "react-icons/ri"; 
 
 const Navigation = () => {
+    const [firstName, setFirstName] = useState("Maikel");
+
     return (
-        <div className='nav'>
+        <Nav>
             <div>
-                <img src={Logo} className="nav-logo" alt="logo digilution" />
+                <LogoNav src={Logo} alt="logo digilution" />
             </div>
             <div>
-                <label className="nav-title">Welkom Kinlok Lau</label>
+                <Welcome>Welkom {firstName}</Welcome>
             </div>
             <div>
-                <ul className='nav-list'>
-                    <li className='nav-position'>
-                        <a className='nav-item' href="/dashboard">
-                            <FaHome className='icon'/>
-                            <p className='nav-text'>Dashboard</p>
-                        </a>
-                    </li>
-                    <li className='nav-position2'>
-                        <a className='nav-item' href="/projects">
-                            <IoIosPaper className='icon'/>
-                            <p className='nav-text'>Projecten</p>
-                        </a>
-                    </li>
-                    <li className='nav-position3'>
-                        <a className='nav-item' href="/relations">
-                            <BsPeopleFill className='icon'/>
-                            <p className='nav-text'>Relaties</p>
-                        </a>
-                    </li>
-                    <li className='nav-position4'>
-                        <a className='nav-item' href="/calendar">
-                            <AiFillCalendar className='icon'/>
-                            <p className='nav-text'>Kalender</p>
-                        </a>
-                    </li>
-                    <li className='nav-position5'>
-                        <a className='nav-item' href="/settings">
-                            <RiSettingsFill className='icon'/>
-                            <p className='nav-text'>Instellingen</p>
-                        </a>
-                    </li>
-                    <li className='nav-position6'>
-                        <a className='nav-item' href="/">
-                            <RiLogoutBoxLine className='icon'/>
-                            <p className='nav-text'>Uitloggen</p>
-                        </a>
-                    </li>
-                </ul>
+                <NavList>
+                        <NavItem href="/dashboard">
+                            <GroupIconText>
+                            <IconPos>
+                                <FaHome className='icon'/>
+                            </IconPos>
+                            <Text>Dashboard</Text>
+                            </GroupIconText>
+                        </NavItem>
+                        <NavItem href="/projects">
+                            <GroupIconText>
+                            <IconPos>
+                                <IoIosPaper className='icon'/>
+                            </IconPos>
+                            <Text>Projecten</Text>
+                            </GroupIconText>
+                        </NavItem>
+                        <NavItem href="/relations">
+                            <GroupIconText>
+                            <IconPos>
+                                <BsPeopleFill className='icon'/>
+                            </IconPos>
+                            <Text>Relaties</Text>
+                            </GroupIconText>
+                        </NavItem>
+                        <NavItem href="/calendar">
+                            <GroupIconText>
+                            <IconPos>
+                                <AiFillCalendar className='icon'/>
+                            </IconPos>
+                            <Text>Kalender</Text>
+                            </GroupIconText>
+                        </NavItem>
+                    <BottomNavContainer>
+                        <NavItem href="/settings">
+                            <GroupIconText>
+                            <IconPos>
+                                <RiSettingsFill className='icon'/>
+                            </IconPos>
+                            <Text>Instellingen</Text>
+                            </GroupIconText>
+                        </NavItem>
+                        <NavItem href="/">
+                            <GroupIconText>
+                            <IconPos>
+                                <RiLogoutBoxLine className='icon'/>
+                            </IconPos>
+                            <Text>Uitloggen</Text>
+                            </GroupIconText>
+                        </NavItem>
+                    </BottomNavContainer>
+                </NavList>
             </div>
-        </div>
+        </Nav>
     )
 }
+    const Nav = styled.div` 
+    display: flex;
+    width: 328px;
+    height: 100vh;
+    background-color: ${({theme: {colors} }) => colors.primary};
+    `
+    const IconPos = styled.div` 
+    display: flex;
+    flex-direction: column;
+    `
+    const LogoNav = styled.img` 
+    position: absolute;
+    left: 8.54%;
+    right: 8.84%;
+    top: 4.88%;
+    bottom: 89.84%;
+    width: 270px;
+    height: auto;
+    `
+    const NavList = styled.ul` 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    `
+    const Welcome = styled.h1` 
+    position: absolute;
+    width: 328px;
+    height: 64px;
+    left: 0%;
+    right: 0.09%;
+    top: 16.02%;
+    bottom: 77.73%;
+    align-items: center;
+    text-align: center;
+    `
+    const NavItem = styled.a` 
+    text-decoration: none;
+    &:hover {
+        background: linear-gradient(270deg, #F95B1C 0%, rgba(255, 255, 255, 0) 33.84%);
+    }   
+    `
+    const Text = styled.h3` 
+    display: flex;
+    text-align: left;
+    `
+    
+    const GroupIconText = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    `
+
+    const BottomNavContainer = styled.div`
+    position: absolute;
+    bottom: 0;
+    height 200px;
+    `
+
 
 export default Navigation

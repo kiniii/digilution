@@ -4,7 +4,7 @@ import "./Header.css"
 import { MdArrowBackIosNew } from "react-icons/md"
 import { AiFillBell } from "react-icons/ai"
 
-const Header = () => {
+const Header = ({title}) => {
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState("Home");
 
@@ -23,7 +23,7 @@ const Header = () => {
                     <button className='button-back' onClick={handleBack}>
                         <MdArrowBackIosNew className='icon' />
                     </button>
-                    <h1 className='pageName'>{currentPage}</h1>
+                    <h1 className='pageName'>{title}</h1>
                 </div>
                 <div className='right'>
                     <AiFillBell className='icon'/>
