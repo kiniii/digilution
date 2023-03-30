@@ -10,7 +10,7 @@ import { RiSettingsFill } from "react-icons/ri";
 import { RiLogoutBoxLine } from "react-icons/ri"; 
 
 const Navigation = () => {
-    const [firstName, setFirstName] = useState("Maikel");
+    const [firstName, setFirstName] = useState("Kinlok");
 
     return (
         <Nav>
@@ -88,8 +88,9 @@ const Navigation = () => {
     flex-direction: column;
     `
     const LogoNav = styled.img` 
+    display: flex;
     position: absolute;
-    left: 8.54%;
+    left: 2%;
     right: 8.84%;
     top: 4.88%;
     bottom: 89.84%;
@@ -101,16 +102,13 @@ const Navigation = () => {
     flex-direction: column;
     justify-content: center;
     `
-    const Welcome = styled.h1` 
+    const Welcome = styled.h2` 
     position: absolute;
     width: 328px;
-    height: 64px;
-    left: 0%;
-    right: 0.09%;
-    top: 16.02%;
-    bottom: 77.73%;
+    top: 10%;
     align-items: center;
     text-align: center;
+    color: white;
     `
     const NavItem = styled.a` 
     text-decoration: none;
@@ -118,7 +116,7 @@ const Navigation = () => {
         background: linear-gradient(270deg, #F95B1C 0%, rgba(255, 255, 255, 0) 33.84%);
     }   
     `
-    const Text = styled.h3` 
+    const Text = styled.h4` 
     display: flex;
     text-align: left;
     `

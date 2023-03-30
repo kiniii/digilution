@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react";
-import Navigation from "../../components/Navigation"
-import Header from "../../components/Header"
+import Layout from "../../Components/Layout";
+import React from "react";
+import styled from "styled-components";
+import Widget from "../../fields/Widget";
 
-const Dashboard = () => {
+
+const Instellingen = () => {
     const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        console.log("test")
-    }, [count]); 
+ 
     return (
-        <>
-        <Navigation />
-        <Header />
-            <button onClick={() => setCount(count + 1)}>Count</button>
-        </>
-    )
+        <Layout title = "Instellingen">
+            <Grid>
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+            </Grid>
+        </Layout>
+        )
 }
 
-export default Dashboard;
+const Grid = styled.div`
+    display: grid;
+`
+
+export default Instellingen;

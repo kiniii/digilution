@@ -1,20 +1,30 @@
 import { useEffect, useState } from "react";
-import Navigation from "../../components/Navigation"
-import Header from "../../components/Header"
+import Layout from "../../Components/Layout";
+import React from "react";
+import styled from "styled-components";
+import Widget from "../../fields/Widget";
 
-const Dashboard = () => {
+const Projects = () => {
     const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        console.log("test")
-    }, [count]); 
     return (
-        <>
-        <Navigation />
-        <Header />
-            <button onClick={() => setCount(count + 1)}>Count</button>
-        </>
+        <Layout title="Projecten">
+            <Grid>
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+            </Grid>
+        </Layout>
     )
 }
 
-export default Dashboard;
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+`
+
+export default Projects;

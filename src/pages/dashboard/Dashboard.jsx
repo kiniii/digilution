@@ -1,20 +1,30 @@
 import { useEffect, useState } from "react";
-import Navigation from "../../components/Navigation"
-import Header from "../../components/Header"
+import React from 'react';
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
+import Widget from "../../fields/Widget";
+import styled from "styled-components";
 
 const Dashboard = () => {
     const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        console.log(`hallo ${count} test`)
-    }, [count]); 
     return (
         <Layout title="Dashboard">
-            <Button onClick={() => setCount(count + 1)}>Count</Button>
+            <Grid>
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+                <Widget />
+            </Grid>
         </Layout>
     )
 }
+
+const Grid = styled.div`
+    display: grid;
+
+`
 
 export default Dashboard;

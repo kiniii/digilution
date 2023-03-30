@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
-import "./Header.css"
+import { useNavigate } from "react-router-dom"
+import styled from "styled-components";
 import { MdArrowBackIosNew } from "react-icons/md"
 import { AiFillBell } from "react-icons/ai"
+import profile from "./assets/logo.svg"
 
 const Header = ({title}) => {
     const navigate = useNavigate();
-    const [currentPage, setCurrentPage] = useState("Home");
 
     const handleBack = () => {
         navigate("/dashboard")
@@ -18,22 +18,57 @@ const Header = ({title}) => {
 
     return(
         <>
-            <div className='header'>
-                <div className='left'>
-                    <button className='button-back' onClick={handleBack}>
-                        <MdArrowBackIosNew className='icon' />
-                    </button>
-                    <h1 className='pageName'>{title}</h1>
-                </div>
-                <div className='right'>
+            <HeaderStyle>
+                <Left>
+                    <ButtonBack onClick={handleBack}>
+                        <MdArrowBackIosNew className='icon'/>
+                    </ButtonBack>
+                    <PageName>{title}</PageName>
+                </Left>
+                <Right>
                     <AiFillBell className='icon'/>
-                    <button className='button-back' onClick={handleProfile}>
-                        <img className='profile-image' src="" alt="" />
-                    </button>
-                </div>
-            </div>
+                    <ButtonBack onClick={handleProfile}>
+                        <Profile src={profile} alt="" />
+                    </ButtonBack>
+                </Right>
+            </HeaderStyle>
         </>
     )
 }
 
+const HeaderStyle = styled.div` 
+    display: flex;
+    background-color: ${({theme: {colors} }) => colors.primary};
+    `
+const Left = styled.div` 
+    margin-left: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    color: white;
+    `
+const Right = styled.div` 
+    margin-right: 2%;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    `
+const ButtonBack = styled.button` 
+    background-color: ${({theme: {colors} }) => colors.primary};
+    border: none;
+    `
+const PageName = styled.h1` 
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    `
+const Profile = styled.img` 
+    height: 64px;
+    width: 64px;
+    right: 5%;
+    top: 23px;
+    border-radius: 64px;
+    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
+    background-color: ${({theme: {colors} }) => colors.secondary};
+    `
 export default Header;
