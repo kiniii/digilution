@@ -5,6 +5,7 @@ import { MdArrowBackIosNew } from "react-icons/md"
 import { AiFillBell } from "react-icons/ai"
 import profile from "../assets/logo.svg"
 
+
 const Header = ({title}) => {
     const navigate = useNavigate();
 
@@ -37,25 +38,21 @@ const Header = ({title}) => {
 }
 
 const HeaderStyle = styled.div` 
-    position: absolute;
-    width: 78%;
+    
+    grid-column-start: 2;
+    grid-column-end: 6;
     padding: 20px 0px;
-    left: 22%;
-    top: 0px;
     display: flex;
     background-color: ${({theme: {colors} }) => colors.primary};
     `
 const Left = styled.div` 
-    margin-left: 2%;
-    left: 5%;
     width: 70%;
     display: flex;
     `
 const Right = styled.div` 
-    margin-right: 2%;
     display: flex;
     align-items: center;
-    right: 0%;
+    justify-content: right;
     width: 30%;
     `
 const ButtonBack = styled.button` 
@@ -63,17 +60,13 @@ const ButtonBack = styled.button`
     border: none;
     `
 const PageName = styled.h1` 
-    margin-left: 2%;
     display: flex;
     align-items: center;
     `
 const Profile = styled.img` 
     height: 64px;
     width: 64px;
-    right: 5%;
-    top: 23px;
     border-radius: 64px;
     border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
-    background-color: ${({theme: {colors} }) => colors.secondary};
     `
 export default Header;

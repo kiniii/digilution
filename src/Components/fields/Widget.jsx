@@ -20,7 +20,7 @@ const WidgetStyle = styled.div`
     ${gridColumn}
     `
 Widget.defaultProps = {
-    height: "39%",
+    height: "400px",
     gridColumn: "span 1"
 }
 export default Widget;

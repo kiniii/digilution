@@ -30,30 +30,30 @@ const Navigation = () => {
                             <Text>Dashboard</Text>
                         </NavItem>
                     </Pos1>
-                    <Pos2>
+                    <li>
                         <NavItem href="/projects">
                             <IconPos>
                                 <IoIosPaper className='icon'/>
                             </IconPos>
                             <Text>Projecten</Text>
                         </NavItem>
-                    </Pos2>
-                    <Pos3>
+                    </li>
+                    <li>
                         <NavItem href="/relations">
                             <IconPos>
                                 <BsPeopleFill className='icon'/>
                             </IconPos>
                             <Text>Relaties</Text>
                         </NavItem>
-                    </Pos3>
-                    <Pos4>
+                    </li>
+                    <li>
                         <NavItem href="/calendar">
                             <IconPos>
                                 <AiFillCalendar className='icon'/>
                             </IconPos>
                             <Text>Kalender</Text>
                         </NavItem>
-                    </Pos4>
+                    </li>
                     <Pos5>
                         <NavItem href="/settings">
                             <IconPos>
@@ -62,60 +62,51 @@ const Navigation = () => {
                             <Text>Instellingen</Text>
                         </NavItem>
                     </Pos5>
-                    <Pos6>
+                    <li>
                         <NavItem href="/">
                             <IconPos>
                                 <RiLogoutBoxLine className='icon'/>
                             </IconPos>
                             <Text>Uitloggen</Text>
                         </NavItem>
-                    </Pos6>
+                    </li>
                 </NavList>
             </div>
         </Nav>
     )
 }
     const Nav = styled.div` 
-    position: fixed;
-    width: 22%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 8;
     height: 100%;
-    left: 0px;
-    top: 0px;
     background-color: ${({theme: {colors} }) => colors.primary};
     `
     const IconPos = styled.div` 
-    position: absolute;
-    left: 25%;
+    margin-left: 20%;
     `
     const LogoNav = styled.img` 
-    position: absolute;
-    left: 8.54%;
-    right: 8.84%;
-    top: 4.88%;
-    bottom: 89.84%;
-    width: 270px;
+    margin-top: 10%;
+    width: 200px;
     height: auto;
     `
     const NavList = styled.ul` 
     list-style: none;
     height: 100%;
     margin: 0;
-    padding-left: 0;
+    padding: 0;
     `
     const Welcome = styled.h1` 
-    position: absolute;
     width: 100%;
     height: 64px;
-    left: 0%;
-    right: 0.09%;
-    top: 16.02%;
-    bottom: 77.73%;
+    margin-top: 10%;
     align-items: center;
     text-align: center;
     `
     const NavItem = styled.a` 
     text-decoration: none;
-    width: 328px;
+    width: 100%;
     height: 84px;
     display: flex;
     left: 0%;
@@ -126,35 +117,14 @@ const Navigation = () => {
     }   
     `
     const Text = styled.h3` 
-    position: absolute;
-    width: 180px;
+    width: 80%;
     right: 0%;
-    text-align: left;
+    text-align: center;
     `
     const Pos1 = styled.li` 
-    position: absolute;
-    top: 238px;
-    `
-    const Pos2 = styled.li` 
-    position: absolute;
-    top: 322px;
-    `
-    const Pos3 = styled.li` 
-    position: absolute;
-    top: 406px;
-    `
-    const Pos4 = styled.li` 
-    position: absolute;
-    top: 490px;
+        margin-top: 10%;
     `
     const Pos5 = styled.li` 
-    position: absolute;
-    top: 826px;
+        margin-top: 50%;
     `
-    const Pos6 = styled.li` 
-    position: absolute;
-    top: 910px;
-    `
-
-
 export default Navigation

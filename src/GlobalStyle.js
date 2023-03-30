@@ -5,7 +5,10 @@ const Global = createGlobalStyle`
         margin: 0;
         padding: 0;
         outline: 0;
-        overflow: hidden;
+    }
+
+    body {
+        background-color: ${({theme: {colors} }) => colors.darkBackground};
     }
 
     .icon {

@@ -45,9 +45,11 @@ const Login = () => {
 
 const Body = styled.body` 
     margin: 0;
+    overflow: hidden;
     `
 const LoginPage = styled.div` 
     height: 100%;
+    
     `
 const LoginPlace = styled.div` 
     position: fixed;

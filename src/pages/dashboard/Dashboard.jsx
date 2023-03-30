@@ -12,7 +12,9 @@ const Dashboard = () => {
         <Layout title="Dashboard">
             <Div>
                 <Grid>
-                    <Widget gridColumn={"span 2"}/>
+                    <Widget gridColumn={"span 2"}>
+                        <h1>Test</h1>
+                    </Widget>
                     <Widget />
                     <Widget />
                     <Widget />
@@ -30,9 +32,11 @@ const Grid = styled.div`
 
     `
 const Div = styled.div` 
-    margin-top: 7%;
-    margin-left: 24%;
-    margin-right: 2%;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    margin: 1.5rem;
     right: 0%;
     bottom: 0%;
     `

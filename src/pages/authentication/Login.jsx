@@ -44,6 +44,7 @@ const Body = styled.body`
     `
 const LoginPage = styled.div` 
     height: 100%;
+    overflow: hidden;
     `
 const LoginPlace = styled.div` 
     position: fixed;

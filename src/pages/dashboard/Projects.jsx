@@ -29,7 +29,7 @@ const Projecten = () => {
     return (
         <Layout title="Projecten">
             <SubHeader>
-                <Search onChange={handleSearch} placeholder="Search..." />
+                <Search onChange={handleSearch} placeholder="Zoeken..." />
                 <Button color="secondary" onClick={() => setButtonPopup(true)}>Nieuw</Button>
                 <Button color="primary" onClick={toggleFilter}>Filter</Button>
             </SubHeader>

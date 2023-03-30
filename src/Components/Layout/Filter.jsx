@@ -12,11 +12,11 @@ const Filter = ({children, display}) => {
 }
 
 const FilterStyle = styled.div` 
-    position: absolute;
-    height: 100%;
     padding: 0px 30px;
-    right: 0px;
-    top: 20%;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 8;
     background-color: ${({theme: {colors} }) => colors.lightBackground};
     ${display}
     `
