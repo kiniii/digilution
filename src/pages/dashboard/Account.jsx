@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
-import React from "react";
-import styled from "styled-components";
-
-import Widget from "../../components/fields/Widget";
 import Layout from "../../components/Layout/Layout"
+import styled from "styled-components";
+import Widget from "../../components/fields/Widget";
 
-const Dashboard = () => {
-    const [count, setCount] = useState(0);
-
+const Account = () => {
     return (
-        <Layout title="Dashboard">
+        <Layout title="Account">
             <Div>
                 <Grid>
-                    <Widget gridColumn={"span 2"}>
+                    <Widget >
                         <h1>Test</h1>
                     </Widget>
+                    <Widget />
                     <Widget />
                     <Widget />
                     <Widget />
@@ -40,4 +37,4 @@ const Div = styled.div`
     right: 0%;
     bottom: 0%;
     `
-export default Dashboard;
+export default Account;
