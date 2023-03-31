@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import styled from "styled-components";
+
 import Background from "./assets/background.svg"
 import Logo from "./assets/logo.svg"
-import styled from "styled-components";
+import Button from "../../components/buttons/Button";
+import TextField from "../../components/fields/TextField";
+import ButtonField from "../../components/buttons/ButtonField";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -21,19 +25,23 @@ const Login = () => {
         alert("link om te herstellen")
     }
 
+    const handleHerstel = () => {
+        alert("link herstel")
+    }
+
     return (
         <Body>
             <LoginPage>  
                 <LoginPlace>
-                    <LogoImage src={Logo} className="logo" alt="logo digilution" />
-                    <TitleLogin>Welkom terug</TitleLogin>
-                    <Input className="input" type="password" value={password} onChange={handlePassword} placeholder="password" />
-                    <RecoverPw href="" onClick={handleRecover}>Wachtwoord vergeten?</RecoverPw>
-                    <ButtonPos>
-                        <Button className='button' onClick={handleLogin}>Log in</Button> 
-                    </ButtonPos>
+                    <LogoImage src={Logo} alt="logo digilution" />
+                    <Welcome>Welkom terug</Welcome>
+                    <Input type="password" value={password} onChange={handlePassword} placeholder="password"/>
+                    <LinkHerstel href="" onClick={handleHerstel}>Wachtwoord vergeten?</LinkHerstel>
+                    <ButtonPos> 
+                        <Button color="secondary" onClick={handleLogin}>Log in</Button>
+                    </ButtonPos>  
                 </LoginPlace>
-                <BackgroundImage src={Background} className="background" alt="background digilution" /> 
+                <BackgroundImage src={Background} alt="background digilution" /> 
             </LoginPage>
         </Body>
     )
@@ -68,12 +76,12 @@ const LogoImage = styled.img`
     width: 270px;
     height: auto;
     `   
-const ButtonPos = styled.div` 
+const ButtonPos = styled(ButtonField)` 
     position: absolute;
     left: 248px;
     top: 306px;
     `     
-const TitleLogin = styled.h1` 
+const Welcome = styled.h1` 
     position: absolute;
     width: 510px;
     height: 30px;
@@ -81,13 +89,13 @@ const TitleLogin = styled.h1`
     top: 112px;
     text-align: center;
     `
-const Input = styled.div` 
+const Input = styled(TextField)` 
     position: absolute;
     padding-left: 10px;
     left: 155px;    
     top: 187px;
     `
-const RecoverPw = styled.a` 
+const LinkHerstel = styled.a` 
     position: absolute;
     left: 248px;
     top: 250px;
@@ -98,5 +106,4 @@ const RecoverPw = styled.a`
     font-size: 18px;
     color: ${({theme: {colors} }) => colors.white};
     `
-
 export default Login;

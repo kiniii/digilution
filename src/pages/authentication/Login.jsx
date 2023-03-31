@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import styled from "styled-components";
+
 import Background from "./assets/background.svg"
 import Logo from "./assets/logo.svg"
-import styled from "styled-components";
-import Button from "../../Components/Button";
-import ButtonField from "../../Components/ButtonField";
-import TextField from "../../fields/TextField";
+import Button from "../../components/buttons/Button";
+import ButtonField from "../../components/buttons/ButtonField";
+import TextField from "../../components/fields/TextField";
+
 
 const Login = () => {
     const navigate = useNavigate();
@@ -24,14 +26,14 @@ const Login = () => {
         <Body>
             <LoginPage>  
                 <LoginPlace>
-                    <LogoImage src={Logo} className="logo" alt="logo digilution" />
-                    <TitleLogin>Welkom terug</TitleLogin>
-                    <Input className="input" type="email" value={email} onChange={handleEmail} placeholder="email" />
-                    <ButtonPos>
-                        <Button className='button' onClick={handleLogin}>Log in</Button> 
-                    </ButtonPos>
+                    <LogoImage src={Logo} alt="logo digilution" />
+                    <Welcome>Welkom terug</Welcome>
+                    <Input type="email" value={email} onChange={handleEmail} placeholder="email" />
+                    <ButtonPos> 
+                        <Button color="secondary" onClick={handleLogin}>Log in</Button>
+                    </ButtonPos> 
                 </LoginPlace>
-                <BackgroundImage src={Background} className="background" alt="background digilution" /> 
+                <BackgroundImage src={Background} alt="background digilution" /> 
             </LoginPage>
         </Body>
     )
@@ -65,12 +67,12 @@ const LogoImage = styled.img`
     width: 270px;
     height: auto;
     `   
-const ButtonPos = styled.div` 
+const ButtonPos = styled(ButtonField)` 
     position: absolute;
     left: 248px;
     top: 306px;
     `     
-const TitleLogin = styled.h1` 
+const Welcome = styled.h1` 
     position: absolute;
     width: 510px;
     height: 30px;
@@ -78,7 +80,7 @@ const TitleLogin = styled.h1`
     top: 112px;
     text-align: center;
     `
-const Input = styled.div` 
+const Input = styled(TextField)` 
     position: absolute;
     width: 340px;
     height: 40px;
