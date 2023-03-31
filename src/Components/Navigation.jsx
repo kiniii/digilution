@@ -82,6 +82,10 @@ const Navigation = () => {
     width: 328px;
     height: 100vh;
     background-color: ${({theme: {colors} }) => colors.primary};
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 8;
     `
     const IconPos = styled.div` 
     display: flex;
@@ -98,14 +102,14 @@ const Navigation = () => {
     height: auto;
     `
     const NavList = styled.ul` 
-    display: flex;
+    margin-top: 30px;
     flex-direction: column;
-    justify-content: center;
+    
     `
-    const Welcome = styled.h2` 
+    const Welcome = styled.h3` 
     position: absolute;
     width: 328px;
-    top: 10%;
+    top: 13%;
     align-items: center;
     text-align: center;
     color: white;
@@ -116,7 +120,7 @@ const Navigation = () => {
         background: linear-gradient(270deg, #F95B1C 0%, rgba(255, 255, 255, 0) 33.84%);
     }   
     `
-    const Text = styled.h4` 
+    const Text = styled.h5` 
     display: flex;
     text-align: left;
     `

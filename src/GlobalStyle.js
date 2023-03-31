@@ -2,12 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
     * {
-        display: grid;
-        grid-template-columns: 30% auto;
         margin: 0;
         padding: 0;
         outline: 0;
-        overflow: hidden;
     }
 
     input {

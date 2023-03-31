@@ -39,6 +39,9 @@ const Header = ({title}) => {
 const HeaderStyle = styled.div` 
     display: flex;
     background-color: ${({theme: {colors} }) => colors.primary};
+    grid-column-start: 2;
+    grid-column-end: 6;
+    padding: 20px 0;
     `
 const Left = styled.div` 
     margin-left: 20%;
