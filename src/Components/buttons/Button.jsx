@@ -12,7 +12,7 @@ const Button = ({children, onClick, color}) => {
 
 const StyleButton = styled(ButtonField)` 
     box-sizing: border-box;
-    width: 166px;
+    width: 150px;
     height: 60px;
     &:hover {
         filter: brightness(120%);

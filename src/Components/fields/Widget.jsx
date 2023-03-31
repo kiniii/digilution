@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { gridColumn, height, width } from 'styled-system';
+import { gridColumn, minHeight, width } from 'styled-system';
 
-const Widget = ({children, height, gridColumn, width}) => {
+const Widget = ({children, minHeight, gridColumn, width}) => {
     return(
         <>
-            <WidgetStyle height={height} gridColumn={gridColumn} width={width}>
+            <WidgetStyle minHeight={minHeight} gridColumn={gridColumn} width={width}>
                 {children} 
             </WidgetStyle>
         </>
@@ -16,11 +16,11 @@ const WidgetStyle = styled.div`
     border-radius: 8px;
     background-color: ${({theme: {colors} }) => colors.primary};
     ${width}
-    ${height}
+    ${minHeight}
     ${gridColumn}
     `
 Widget.defaultProps = {
-    height: "400px",
+    minHeight: "400px",
     gridColumn: "span 1"
 }
 export default Widget;
