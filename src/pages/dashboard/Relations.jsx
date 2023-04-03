@@ -12,18 +12,14 @@ import Filter from "../../components/Layout/Filter";
 import FilterOption from "../../components/Layout/FilterOption";
 
 const Relaties = () => {
-    const relations = ["alle relaties in de database"]
-
-   
-
-    relations.forEach(element => {
-            <RelationInfo />
-        });
+    const relations = [{test: "test"},{test: "test2"}]
 
     const [filter, setFilter] = useState(false);
+    const [gridColumnEnd, setGridColumnEnd] = useState(6);
 
     const toggleFilter = () => {
         setFilter(!filter)
+        setGridColumnEnd(filter ? 6 : 5);
     };
 
     const [buttonPopup, setButtonPopup] = useState(false);
@@ -47,6 +43,14 @@ const Relaties = () => {
                 <Button color="secondary" onClick={() => setButtonPopup(true)}>Nieuw</Button>
                 <Button color="primary" onClick={toggleFilter}>Filter</Button>
             </SubHeader>
+            <Content gridColumnEnd={gridColumnEnd}>
+                {
+                    relations.map(() =>
+                    <div>
+                        <RelationInfo companyName="test" straat="test" postcode="test" stad="test" statusName="test" />
+                    </div>)
+                }
+            </Content>
             
             {filter && <Filter display="block">
                 <h1>Filter</h1>
@@ -75,10 +79,10 @@ const Relaties = () => {
                     <InputPopup type="email" placeholder="Email.."/>
                     <InputPopup type="text" placeholder="KVK.."/>
                 </div>
-                <div>
-                    <Button color="primary" onClick={() => setButtonPopup(false)}>Annuleren</Button>
-                    <Button color="secondary"onClick={handleNewRelation}>Opslaan</Button>
-                </div>
+                <ButtonPos>
+                    <Button margin={10} color="primary" onClick={() => setButtonPopup(false)}>Annuleren</Button>
+                    <Button margin={10} color="secondary"onClick={handleNewRelation}>Opslaan</Button>
+                </ButtonPos>
             </Popup>
         </Layout>
     )
@@ -87,5 +91,14 @@ const FilterClick = styled.div`
     display: flex;
     align-items: center;
     `
-
+const Content = styled.div` 
+    grid-column-start: 2;
+    grid-column-end: ${({gridColumnEnd}) => gridColumnEnd};
+    grid-row-start: 3;
+    grid-row-end: 8;
+    `
+const ButtonPos = styled.div` 
+    display: flex;
+    justify-content: space-around;
+    `
 export default Relaties;

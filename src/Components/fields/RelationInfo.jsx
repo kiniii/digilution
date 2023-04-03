@@ -1,36 +1,79 @@
-import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const Relation = () => {
+import profile from "../../components/assets/logo.svg"
+
+import { useNavigate } from "react-router-dom";
+import { HiOutlineMail } from "react-icons/hi";
+import { FaPhoneAlt } from "react-icons/fa";
+import { TbWorld } from "react-icons/tb";
+
+
+const Relation = ({companyName, straat, postcode, stad, statusName}) => {
     const navigate = useNavigate();
 
     const handleRelation = () => {
-        navigate("/")
+        navigate("/dashboard")
     }
 
     return(
         <>
-            <div className='relation' onClick={handleRelation}>
-                <div className='profile'>
-                    <img className='profile-picture' src={companyLogo} alt="" />
-                    <h1 className='profile-name'>{companyName}</h1>
-                </div>
-                <div className='relation-location'>
-                    <p>{straat}</p>
-                    <div className='location-placement'>
-                        <p>{postcode}</p>
-                        <p>{stad}</p>
-                    </div>
-                    <div className='relation-contact'>
-
-                    </div>
-                    <div className='status'>
-
-                    </div>
-                </div>
-            </div>
+            <RelationCard onClick={handleRelation}>
+                <Profile>
+                    <ProfilePicture src={profile} alt="" />
+                    <ProfileName>{companyName}</ProfileName>
+                </Profile>
+                <Location>
+                    <h1>{straat}</h1>
+                    <LocationRow2 className='location-placement'>
+                        <h1>{postcode}</h1>
+                        <h1>{stad}</h1>
+                    </LocationRow2>
+                </Location>
+                <Contact >
+                    <FaPhoneAlt />
+                    <HiOutlineMail />
+                    <TbWorld />
+                </Contact>
+                <Status>
+                    <h1>{statusName}</h1>
+                </Status>
+            </RelationCard>
         </>
     )
 }
 
+const RelationCard = styled.div` 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: ${({theme: {colors} }) => colors.lightBackground};
+    border-bottom: 2.5px solid ${({theme: {colors} }) => colors.secondary};
+    `
+const Profile = styled.div` 
+    display: flex;
+    align-items: center;
+    `
+const ProfilePicture = styled.img` 
+    height: 64px;
+    width: 64px;
+    border-radius: 64px;
+    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
+    `
+const ProfileName = styled.h1` 
+    margin: 10px;
+    `
+const Location = styled.div` 
+    margin: 10px;
+    `
+const LocationRow2 = styled.div` 
+    display: flex;
+    `
+const Contact = styled.div` 
+    margin: 10px;
+    `
+const Status = styled.div` 
+    margin: 10px;
+    `
 export default Relation;
