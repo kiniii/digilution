@@ -45,9 +45,9 @@ const Relaties = () => {
             </SubHeader>
             <Content gridColumnEnd={gridColumnEnd}>
                 {
-                    relations.map(() =>
-                    <div>
-                        <RelationInfo companyName="test" straat="test" postcode="test" stad="test" statusName="test" />
+                    relations.map((relation, index) =>
+                    <div key={index}>
+                        <RelationInfo key={relation.id} companyName={relation.companyName} straat={relation.straat} postcode={relation.postcode} stad={relation.stad} statusName={relation.statusName} />
                     </div>)
                 }
             </Content>
