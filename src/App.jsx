@@ -9,14 +9,11 @@ import thema from "./thema"
 import Login from "./pages/authentication/Login"
 import Login_Password from "./pages/authentication/Login_Password"
 import Dashboard from './pages/dashboard/Dashboard'
-import Projects from "./pages/projects/Projects"
-import Relations from "./pages/relations/Relations"
-import Calendar from "./pages/calendar/Calendar"
-import Instellingen from "./pages/settings/Instellingen"
-import Account from "./pages/account/Account"
-import Navigation from "./components/Navigation"
-import thema from "./thema"
-import { ThemeProvider } from 'styled-components'
+import Projects from "./pages/dashboard/Projects"
+import Relations from "./pages/dashboard/Relations"
+import Calendar from "./pages/dashboard/Calendar"
+import Instellingen from "./pages/dashboard/Instellingen"
+import Account from "./pages/dashboard/Account"
 
 function App() {
     const router = createBrowserRouter([

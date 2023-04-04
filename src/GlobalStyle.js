@@ -46,3 +46,5 @@ const Global = createGlobalStyle`
         color:  ${({theme: {colors} }) => colors.white};
     }
  `;
+
+ export default Global;

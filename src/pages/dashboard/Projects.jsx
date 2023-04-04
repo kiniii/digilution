@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import Layout from "../../components/Layout/Layout";
-import SubHeader from "../../components/Layout/SubHeader";
 import Button from "../../components/buttons/Button";
 import Popup from "../../components/Popups/Popup";
 import InputPopup from "../../components/Popups/InputPopup";
 import Search from "../../components/fields/SearchBar";
 import Filter from "../../components/Layout/Filter";
 import FilterOption from "../../components/Layout/FilterOption";
+import Widget from "../../components/fields/Widget";
+//import SubHeader from "../../components/Layout/SubHeader";
 
 const Projecten = () => {
     const [filter, setFilter] = useState(false);
@@ -53,14 +54,43 @@ const Projecten = () => {
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <h1>test</h1>
             </Popup>
-        </Layout>
 
-        
+            <Div>
+                <Grid>
+                    <Widget />
+                    <Widget />
+                    <Widget />
+                </Grid>
+            </Div>
+        </Layout>
     )
 }
 
 const FilterClick = styled.div` 
     display: flex;
     align-items: center;
+    `
+
+const Div = styled.div`
+    grid-column: span 4;
+    margin: 1rem;
+    padding: 80px 0px;
+    `
+
+const Grid = styled.div`
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3fr);
+    `
+
+const SubHeader = styled.div`
+    justify-content: space-around;
+    padding: 30px 0px;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    background-color: ${({theme: {colors} }) => colors.darkBackground};
     `
 export default Projecten;
