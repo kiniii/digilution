@@ -11,6 +11,7 @@ import Login_Password from "./pages/authentication/Login_Password"
 import Dashboard from './pages/dashboard/Dashboard'
 import Projects from "./pages/dashboard/Projects"
 import Relations from "./pages/dashboard/Relations"
+import Relation from './pages/dashboard/Relation'
 import Calendar from "./pages/dashboard/Calendar"
 import Instellingen from "./pages/dashboard/Instellingen"
 import Account from "./pages/dashboard/Account"
@@ -36,6 +37,10 @@ function App() {
         {
             path:"/relations", 
             element: <Relations />
+        },
+        {
+            path:"/relation", 
+            element: <Relation />
         },
         {
             path:"/calendar", 

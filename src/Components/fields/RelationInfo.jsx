@@ -13,7 +13,7 @@ const Relation = ({companyName, straat, postcode, stad, statusName}) => {
     const navigate = useNavigate();
 
     const handleRelation = () => {
-        navigate("/dashboard")
+        navigate("/relation")
     }
 
     return(
@@ -48,7 +48,7 @@ const RelationCard = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: ${({theme: {colors} }) => colors.lightBackground};
+    background-color: ${({theme: {colors} }) => colors.white};
     border-bottom: 2.5px solid ${({theme: {colors} }) => colors.secondary};
     `
 const Profile = styled.div` 

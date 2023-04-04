@@ -44,6 +44,12 @@ const Relaties = () => {
                 <Button color="primary" onClick={toggleFilter}>Filter</Button>
             </SubHeader>
             <Content gridColumnEnd={gridColumnEnd}>
+                <RelationHeader>
+                    <p>Naam relatie</p>
+                    <p>Gegevens relatie</p>
+                    <p>Contactgegevens</p>
+                    <p>Status relatie</p>
+                </RelationHeader>
                 {
                     relations.map((relation, index) =>
                     <div key={index}>
@@ -91,6 +97,13 @@ const FilterClick = styled.div`
     display: flex;
     align-items: center;
     `
+const RelationHeader = styled.div` 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 15px solid ${({theme: {colors} }) => colors.secondary};
+    padding: 20px;
+    `
 const Content = styled.div` 
     grid-column-start: 2;
     grid-column-end: ${({gridColumnEnd}) => gridColumnEnd};
@@ -100,5 +113,6 @@ const Content = styled.div`
 const ButtonPos = styled.div` 
     display: flex;
     justify-content: space-around;
+    
     `
 export default Relaties;

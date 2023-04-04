@@ -25,6 +25,13 @@ const Global = createGlobalStyle`
         color:  ${({theme: {colors} }) => colors.white};
     }
 
+    a {
+        font-family: ${({theme: {font} }) => font.h2FontFamily};
+        font-size: ${({theme: {font} }) => font.h2FontSize};
+        font-weight: ${({theme: {font} }) => font.h2FontWeight};
+        color:  ${({theme: {colors} }) => colors.white};
+    }
+
     h2 {
         font-family: ${({theme: {font} }) => font.h2FontFamily};
         font-size: ${({theme: {font} }) => font.h2FontSize};
