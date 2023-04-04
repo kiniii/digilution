@@ -10,6 +10,8 @@ import Filter from "../../components/Layout/Filter";
 import FilterOption from "../../components/Layout/FilterOption";
 import Widget from "../../components/fields/Widget";
 //import SubHeader from "../../components/Layout/SubHeader";
+import ProjectsBox from "../../Components/ProjectsBox";
+import ProgressBar from "../../Components/ProgressBar";
 
 const Projecten = () => {
     const [filter, setFilter] = useState(false);
@@ -27,6 +29,10 @@ const Projecten = () => {
     const handleFilterOption1 = (event) => {
         console.log("test")
     }
+
+    const TestData = [
+        { bgcolor: "#f95b1c", completed: 50 }
+    ]
 
     return (
         <Layout title="Projecten">
@@ -57,7 +63,10 @@ const Projecten = () => {
 
             <Div>
                 <Grid>
-                    <Widget />
+                    <Widget>
+                    {TestData.map((progress, id) => (
+                    <ProgressBar key={id} bgcolor={progress.bgcolor} completed={progress.completed} />))}
+                    </Widget>
                     <Widget />
                     <Widget />
                 </Grid>
@@ -72,7 +81,8 @@ const FilterClick = styled.div`
     `
 
 const Div = styled.div`
-    grid-column: span 4;
+    grid-column-start: 2;
+    grid-column-end: 6;
     margin: 1rem;
     padding: 80px 0px;
     `
