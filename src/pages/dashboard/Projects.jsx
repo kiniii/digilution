@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 import Layout from "../../components/Layout/Layout";
 import Button from "../../components/buttons/Button";
@@ -11,7 +12,7 @@ import FilterOption from "../../components/Layout/FilterOption";
 import Widget from "../../components/fields/Widget";
 //import SubHeader from "../../components/Layout/SubHeader";
 import ProjectsBox from "../../Components/ProjectsBox";
-import ProgressBar from "../../Components/ProgressBar";
+//import ProgressBar from "../../Components/ProgressBar";
 
 const Projecten = () => {
     const [filter, setFilter] = useState(false);
@@ -30,9 +31,12 @@ const Projecten = () => {
         console.log("test")
     }
 
-    const TestData = [
-        { bgcolor: "#f95b1c", completed: 50 }
-    ]
+    const navigate = useNavigate();
+
+    const handlePageRedirect = () => {
+        console.log("handlepageredirect is gelukt");
+        navigate("/project");
+    }
 
     return (
         <Layout title="Projecten">
@@ -63,9 +67,8 @@ const Projecten = () => {
 
             <Div>
                 <Grid>
-                    <Widget>
-                    {TestData.map((progress, id) => (
-                    <ProgressBar key={id} bgcolor={progress.bgcolor} completed={progress.completed} />))}
+                    <Widget onClick={handlePageRedirect}>
+                        <ProjectsBox></ProjectsBox>
                     </Widget>
                     <Widget />
                     <Widget />

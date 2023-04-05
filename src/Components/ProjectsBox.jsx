@@ -5,7 +5,7 @@ const TestData = [
     { bgcolor: "#f95b1c", completed: 60 }
 ]
 
-const ProjectsBox = ({ title, description, date, ProgressBar, users }) => {
+const ProjectsBox = ({ title, description, date, progressBar, users }) => {
     return (
         <div>
             <h1>{title}</h1>
@@ -19,5 +19,7 @@ const ProjectsBox = ({ title, description, date, ProgressBar, users }) => {
         </div>
     )
 }
+
+console.log({ProjectsBox});
 
 export default ProjectsBox;

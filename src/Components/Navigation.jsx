@@ -8,6 +8,7 @@ import { BsPeopleFill } from "react-icons/bs";
 import { AiFillCalendar } from "react-icons/ai";  
 import { RiSettingsFill } from "react-icons/ri";  
 import { RiLogoutBoxLine } from "react-icons/ri"; 
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     const [firstName, setFirstName] = useState("Kinlok");
@@ -114,7 +115,7 @@ const Navigation = () => {
     text-align: center;
     color: white;
     `
-    const NavItem = styled.a` 
+    const NavItem = styled(Link)` 
     text-decoration: none;
     &:hover {
         background: linear-gradient(270deg, #F95B1C 0%, rgba(255, 255, 255, 0) 33.84%);

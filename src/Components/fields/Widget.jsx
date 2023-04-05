@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { gridColumn, minHeight, width } from 'styled-system';
 
-const Widget = ({children, minHeight, gridColumn, width}) => {
+const Widget = ({children, minHeight, gridColumn, width, onClick}) => {
     return(
         <>
-            <WidgetStyle minHeight={minHeight} gridColumn={gridColumn} width={width}>
+            <WidgetStyle minHeight={minHeight} gridColumn={gridColumn} width={width} onClick={onClick}>
+                console.log({onClick});
                 {children} 
             </WidgetStyle>
         </>
@@ -18,6 +19,7 @@ const WidgetStyle = styled.div`
     ${width}
     ${minHeight}
     ${gridColumn}
+    cursor: pointer;
     `
 Widget.defaultProps = {
     minHeight: "400px",
