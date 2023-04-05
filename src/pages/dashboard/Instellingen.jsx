@@ -36,6 +36,10 @@ const Instellingen = () => {
         console.log("test")
     }
 
+    const handleChangeProfileIcon = () => {
+        alert("Changed icon")
+    }
+
     return (
         <Layout title="Instellingen">
             <SubHeader>
@@ -75,7 +79,7 @@ const Instellingen = () => {
 
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <h1>Nieuwe Gebruiker</h1>
-                <img src="" alt="" />
+                <ButtonProfileImage onClick={handleChangeProfileIcon}>+</ButtonProfileImage>
                 <div>
                     <InputPopup type="text" placeholder="Name.."/>
                     <InputPopup type="text" placeholder="Adress.."/>
@@ -113,6 +117,16 @@ const Content = styled.div`
 const ButtonPos = styled.div` 
     display: flex;
     justify-content: space-around;
-    
+    `
+const ButtonProfileImage = styled.button` 
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 64px;
+    border: 2.5px solid ${({theme: {colors} }) => colors.white};
+    background-color: ${({theme: {colors} }) => colors.white};
+    &:hover {
+        filter: brightness(80%);
+    }
     `
 export default Instellingen;

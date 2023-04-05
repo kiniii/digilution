@@ -6,6 +6,7 @@ import Widget from "../../components/fields/Widget";
 import Layout from "../../components/Layout/Layout";
 import SubHeader from "../../components/Layout/SubHeader";
 import Button from "../../components/buttons/Button";
+import profile from "../../components/assets/logo.svg";
 
 const Relation = () => {
     const toggleDelete = () => {
@@ -25,6 +26,23 @@ const Relation = () => {
                 <Grid>
                     <Widget >
                         <h1>Test</h1>
+                        <Profile src={profile} alt="" />
+                        <ItemProfile>
+                            <p>Adres: </p>
+                            <p>{}</p>
+                        </ItemProfile>
+                        <ItemProfile>
+                            <p>Tel-nr: </p>
+                            <p>{}</p>
+                        </ItemProfile>
+                        <ItemProfile>
+                            <p>Mail: </p>
+                            <p>{}</p>
+                        </ItemProfile>
+                        <ItemProfile>
+                            <p>KVK: </p>
+                            <p>{}</p>
+                        </ItemProfile>
                     </Widget>
                     <Widget gridColumn={"span 2"}/>
                     <Widget />
@@ -53,5 +71,19 @@ const NavItem = styled.a`
     text-decoration: none;
     align-items: center;
     text-align: center;
+    `
+const Profile = styled.img` 
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 64px;
+    background-color: ${({theme: {colors} }) => colors.white};
+    `
+const ItemProfile = styled.div` 
+    margin: 10px;
+    display: flex;
+    border-radius: 64px;
+    align-items: center;
+    color: ${({theme: {colors} }) => colors.white};
     `
 export default Relation;

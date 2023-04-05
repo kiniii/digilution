@@ -15,6 +15,7 @@ const WidgetStyle = styled.div`
     border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
     border-radius: 8px;
     background-color: ${({theme: {colors} }) => colors.primary};
+    padding: 1rem;
     ${width}
     ${minHeight}
     ${gridColumn}

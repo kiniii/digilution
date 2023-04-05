@@ -11,8 +11,9 @@ const SubHeader = ({children}) => {
 }
 
 const SubHeaderStyle = styled.div` 
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 30px 0px;
+    margin: 0 20px;
     grid-column-start: 2;
     grid-column-end: 6;
     grid-row-start: 2;

@@ -43,8 +43,10 @@ const Body = styled.body`
     margin: 0;
     `
 const LoginPage = styled.div` 
-    height: 100%;
     overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     `
 const LoginPlace = styled.div` 
     position: fixed;

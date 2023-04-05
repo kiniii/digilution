@@ -38,22 +38,25 @@ const Header = ({title}) => {
 }
 
 const HeaderStyle = styled.div` 
-    
     grid-column-start: 2;
     grid-column-end: 6;
     padding: 20px 0px;
     display: flex;
+    justify-content: space-between;
     background-color: ${({theme: {colors} }) => colors.primary};
     `
 const Left = styled.div` 
-    width: 70%;
+    width: 60%;
+    margin: 0 20px;
     display: flex;
     `
 const Right = styled.div` 
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 30%;
+    width: 20%;
+    margin: 0 20px;
+
     `
 const ButtonBack = styled.button` 
     background-color: ${({theme: {colors} }) => colors.primary};

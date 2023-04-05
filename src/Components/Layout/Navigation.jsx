@@ -8,6 +8,7 @@ import { BsPeopleFill } from "react-icons/bs";
 import { AiFillCalendar } from "react-icons/ai";  
 import { RiSettingsFill } from "react-icons/ri";  
 import { RiLogoutBoxLine } from "react-icons/ri"; 
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     const [firstName, setFirstName] = useState("Maikel");
@@ -80,7 +81,8 @@ const Navigation = () => {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 8;
-    height: 100%;
+    height: 100vh;
+    position: sticky;
     background-color: ${({theme: {colors} }) => colors.primary};
     `
     const IconPos = styled.div` 
@@ -104,7 +106,7 @@ const Navigation = () => {
     align-items: center;
     text-align: center;
     `
-    const NavItem = styled.a` 
+    const NavItem = styled(Link)` 
     text-decoration: none;
     width: 100%;
     height: 84px;
