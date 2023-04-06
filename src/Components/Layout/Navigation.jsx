@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Logo from "../assets/logo.svg"
 import styled from "styled-components";
+import Box from './Box';
 
 import { FaHome } from "react-icons/fa";
 import { IoIosPaper } from "react-icons/io";
@@ -15,73 +16,73 @@ const Navigation = () => {
 
     return (
         <Nav>
-            <div>
-                <LogoNav src={Logo} alt="logo digilution" />
-            </div>
-            <div>
-                <Welcome>Welkom {firstName}</Welcome>
-            </div>
+            <Box width={200} mt={"10%"} height={"auto"}>
+                <img src={Logo} alt="logo digilution" />
+            </Box>
+            <Box width={"100%"} height={64} mt={"10%"} alignItems={"center"} textAlign={"center"}>
+                <h1>Welkom {firstName}</h1>
+            </Box>
             <div>
                 <NavList>
-                    <Pos>
+                    <Box height={"auto"} flexDirection={"column"} JustifyContent={"space-between"}>
                     <div>
                     <li>
                         <NavItem to="/dashboard">
-                            <IconPos>
+                            <Box ml={"20%"}>
                                 <FaHome className='icon'/>
-                            </IconPos>
-                            <Text>Dashboard</Text>
+                            </Box>
+                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Dashboard</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/projects">
-                            <IconPos>
+                            <Box ml={"20%"}>
                                 <IoIosPaper className='icon'/>
-                            </IconPos>
-                            <Text>Projecten</Text>
+                            </Box>
+                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Projecten</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/relations">
-                            <IconPos>
+                            <Box ml={"20%"}>
                                 <BsPeopleFill className='icon'/>
-                            </IconPos>
-                            <Text>Relaties</Text>
+                            </Box>
+                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Relaties</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/calendar">
-                            <IconPos>
+                            <Box ml={"20%"}>
                                 <AiFillCalendar className='icon'/>
-                            </IconPos>
-                            <Text>Kalender</Text>
+                            </Box>
+                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Kalender</Box>
                         </NavItem>
                     </li>
                     </div>
                     <div>
                     <li>
                         <NavItem to="/settings">
-                            <IconPos>
+                            <Box ml={"20%"}>
                                 <RiSettingsFill className='icon'/>
-                            </IconPos>
-                            <Text>Instellingen</Text>
+                            </Box>
+                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Instellingen</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/">
-                            <IconPos>
+                            <Box ml={'20%'}>
                                 <RiLogoutBoxLine className='icon'/>
-                            </IconPos>
-                            <Text>Uitloggen</Text>
+                            </Box>
+                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Uitloggen</Box>
                         </NavItem>
                     </li>
                     </div>
-                    </Pos>
+                    </Box>
                 </NavList>
             </div>
         </Nav>
     )
-}
+}      
     const Nav = styled.div` 
     grid-column-start: 1;
     grid-column-end: 2;
@@ -91,26 +92,11 @@ const Navigation = () => {
     position: sticky;
     background-color: ${({theme: {colors} }) => colors.primary};
     `
-    const IconPos = styled.div` 
-    margin-left: 20%;
-    `
-    const LogoNav = styled.img` 
-    margin-top: 10%;
-    width: 200px;
-    height: auto;
-    `
     const NavList = styled.ul` 
     list-style: none;
     height: 100%;
     margin: 10% 0;
     padding: 0;
-    `
-    const Welcome = styled.h1` 
-    width: 100%;
-    height: 64px;
-    margin-top: 10%;
-    align-items: center;
-    text-align: center;
     `
     const NavItem = styled(Link)` 
     text-decoration: none;
@@ -123,14 +109,5 @@ const Navigation = () => {
     &:hover {
         background: linear-gradient(270deg, #F95B1C 0%, rgba(255, 255, 255, 0) 33.84%);
     }   
-    `
-    const Text = styled.h3` 
-    width: 80%;
-    right: 0%;
-    text-align: center;
-    `
-    const Pos = styled.div` 
-    height: auto;
-    justify-content: space-between;
     `
 export default Navigation

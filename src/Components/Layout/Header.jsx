@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { MdArrowBackIosNew } from "react-icons/md"
 import { AiFillBell } from "react-icons/ai"
 import profile from "../assets/logo.svg"
+import Box from './Box';
 
 
 const Header = ({title}) => {
@@ -20,18 +21,18 @@ const Header = ({title}) => {
     return(
         <>
             <HeaderStyle>
-                <Left>
+                <Box display={"flex"} m= {[0, "1.5rem"]} width={"60%"}>
                     <ButtonBack onClick={handleBack}>
                         <MdArrowBackIosNew className='icon'/>
                     </ButtonBack>
-                    <PageName>{title}</PageName>
-                </Left>
-                <Right>
+                    <Box as="h1" alignItems={"center"} display={"flex"}>{title}</Box>
+                </Box>
+                <Box display={"flex"} m= {[0, "1.5rem"]} width={"20%"} alignItems={"center"} justifyContent={"right"}>
                     <AiFillBell className='icon'/>
                     <ButtonBack onClick={handleProfile}>
                         <Profile src={profile} alt="" />
                     </ButtonBack>
-                </Right>
+                </Box>
             </HeaderStyle>
         </>
     )
@@ -45,26 +46,9 @@ const HeaderStyle = styled.div`
     justify-content: space-between;
     background-color: ${({theme: {colors} }) => colors.primary};
     `
-const Left = styled.div` 
-    width: 60%;
-    margin: 0 1.5rem;
-    display: flex;
-    `
-const Right = styled.div` 
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    width: 20%;
-    margin: 0 1.5rem;
-
-    `
 const ButtonBack = styled.button` 
     background-color: ${({theme: {colors} }) => colors.primary};
     border: none;
-    `
-const PageName = styled.h1` 
-    display: flex;
-    align-items: center;
     `
 const Profile = styled.img` 
     height: 64px;
