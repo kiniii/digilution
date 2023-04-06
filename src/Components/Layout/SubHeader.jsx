@@ -13,7 +13,7 @@ const SubHeader = ({children}) => {
 const SubHeaderStyle = styled.div` 
     justify-content: space-between;
     padding: 30px 0px;
-    margin: 0 20px;
+    margin: 0 1.5rem;
     grid-column-start: 2;
     grid-column-end: 6;
     grid-row-start: 2;

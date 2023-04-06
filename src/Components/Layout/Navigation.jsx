@@ -23,16 +23,18 @@ const Navigation = () => {
             </div>
             <div>
                 <NavList>
-                    <Pos1>
-                        <NavItem href="/dashboard">
+                    <Pos>
+                    <div>
+                    <li>
+                        <NavItem to="/dashboard">
                             <IconPos>
                                 <FaHome className='icon'/>
                             </IconPos>
                             <Text>Dashboard</Text>
                         </NavItem>
-                    </Pos1>
+                    </li>
                     <li>
-                        <NavItem href="/projects">
+                        <NavItem to="/projects">
                             <IconPos>
                                 <IoIosPaper className='icon'/>
                             </IconPos>
@@ -40,7 +42,7 @@ const Navigation = () => {
                         </NavItem>
                     </li>
                     <li>
-                        <NavItem href="/relations">
+                        <NavItem to="/relations">
                             <IconPos>
                                 <BsPeopleFill className='icon'/>
                             </IconPos>
@@ -48,29 +50,33 @@ const Navigation = () => {
                         </NavItem>
                     </li>
                     <li>
-                        <NavItem href="/calendar">
+                        <NavItem to="/calendar">
                             <IconPos>
                                 <AiFillCalendar className='icon'/>
                             </IconPos>
                             <Text>Kalender</Text>
                         </NavItem>
                     </li>
-                    <Pos5>
-                        <NavItem href="/settings">
+                    </div>
+                    <div>
+                    <li>
+                        <NavItem to="/settings">
                             <IconPos>
                                 <RiSettingsFill className='icon'/>
                             </IconPos>
                             <Text>Instellingen</Text>
                         </NavItem>
-                    </Pos5>
+                    </li>
                     <li>
-                        <NavItem href="/">
+                        <NavItem to="/">
                             <IconPos>
                                 <RiLogoutBoxLine className='icon'/>
                             </IconPos>
                             <Text>Uitloggen</Text>
                         </NavItem>
                     </li>
+                    </div>
+                    </Pos>
                 </NavList>
             </div>
         </Nav>
@@ -96,7 +102,7 @@ const Navigation = () => {
     const NavList = styled.ul` 
     list-style: none;
     height: 100%;
-    margin: 0;
+    margin: 10% 0;
     padding: 0;
     `
     const Welcome = styled.h1` 
@@ -123,10 +129,8 @@ const Navigation = () => {
     right: 0%;
     text-align: center;
     `
-    const Pos1 = styled.li` 
-        margin-top: 10%;
-    `
-    const Pos5 = styled.li` 
-        margin-top: 50%;
+    const Pos = styled.div` 
+    height: auto;
+    justify-content: space-between;
     `
 export default Navigation

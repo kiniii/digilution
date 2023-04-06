@@ -27,6 +27,8 @@ const PopupInner = styled.div`
     width: 100%;
     max-width: 640px;
     background-color: ${({theme: {colors} }) => colors.primary};
+    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
+    border-radius: 8px;
     `
 const ButtonClose = styled.button` 
     position: absolute;

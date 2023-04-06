@@ -47,7 +47,7 @@ const HeaderStyle = styled.div`
     `
 const Left = styled.div` 
     width: 60%;
-    margin: 0 20px;
+    margin: 0 1.5rem;
     display: flex;
     `
 const Right = styled.div` 
@@ -55,7 +55,7 @@ const Right = styled.div`
     align-items: center;
     justify-content: right;
     width: 20%;
-    margin: 0 20px;
+    margin: 0 1.5rem;
 
     `
 const ButtonBack = styled.button` 

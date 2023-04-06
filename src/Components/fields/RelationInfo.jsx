@@ -47,7 +47,7 @@ const RelationCard = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 1.5rem;
     background-color: ${({theme: {colors} }) => colors.white};
     border-bottom: 2.5px solid ${({theme: {colors} }) => colors.secondary};
     `

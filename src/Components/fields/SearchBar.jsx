@@ -13,7 +13,7 @@ const Search = ({children, onChange, placeholder}) => {
 const SearchBar = styled(TextField)`
     border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
     box-sizing: border-box;
-    width: 60%;
+    width: 70%;
     height: 60px;
     `;
 

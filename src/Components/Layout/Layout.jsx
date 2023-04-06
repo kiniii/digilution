@@ -15,8 +15,7 @@ const Layout = ({title, children}) => {
 }
 const Grid = styled.div` 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr 1fr 6fr;  
+    grid-template-columns: 300px 1fr;
     `
 
 export default Layout;

@@ -15,11 +15,9 @@ const Instellingen = () => {
     const relations = [{test: "test"},{test: "test2"}]
 
     const [filter, setFilter] = useState(false);
-    const [gridColumnEnd, setGridColumnEnd] = useState(6);
 
     const toggleFilter = () => {
         setFilter(!filter)
-        setGridColumnEnd(filter ? 6 : 5);
     };
 
     const [buttonPopup, setButtonPopup] = useState(false);
@@ -47,7 +45,7 @@ const Instellingen = () => {
                 <Button color="secondary" onClick={() => setButtonPopup(true)}>Nieuw</Button>
                 <Button color="primary" onClick={toggleFilter}>Filter</Button>
             </SubHeader>
-            <Content gridColumnEnd={gridColumnEnd}>
+            <Content>
                 <RelationHeader>
                     <p>Naam gebruiker</p>
                     <p>Gegevens gebruiker</p>
@@ -106,13 +104,10 @@ const RelationHeader = styled.div`
     align-items: center;
     justify-content: space-between;
     border-bottom: 15px solid ${({theme: {colors} }) => colors.secondary};
-    padding: 20px;
+    padding: 1.5rem;
     `
 const Content = styled.div` 
-    grid-column-start: 2;
-    grid-column-end: ${({gridColumnEnd}) => gridColumnEnd};
-    grid-row-start: 3;
-    grid-row-end: 8;
+
     `
 const ButtonPos = styled.div` 
     display: flex;

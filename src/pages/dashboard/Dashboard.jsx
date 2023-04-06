@@ -32,10 +32,6 @@ const Grid = styled.div`
 
     `
 const Div = styled.div` 
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 8;
     margin: 1.5rem;
     right: 0%;
     bottom: 0%;
