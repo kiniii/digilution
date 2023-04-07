@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import styled from "styled-components";
 
+import Box from "../../components/Layout/Box";
 import Background from "./assets/background.svg"
 import Logo from "./assets/logo.svg"
 import Button from "../../components/buttons/Button";
@@ -26,33 +27,23 @@ const Login = () => {
     }
 
     return (
-        <Body>
-            <LoginPage>  
+        <Box m={0}>
+            <Box width="100%" height="100%" overflow="hidden" position="absolute">  
                 <LoginPlace>
-                    <LogoImage src={Logo} alt="logo digilution" />
-                    <Welcome>Welkom terug</Welcome>
+                    <Box as="img" width={270} height={"auto"} mt={20} src={Logo} alt="logo digilution" />
+                    <Box as="h1" width={510} height={30} overflow="hidden" position="absolute" top={112} left={76}>Welkom terug</Box>
                     <Input type="password" value={password} onChange={handlePassword} placeholder="password"/>
-                    <LinkHerstel href="" onClick={handleHerstel}>Wachtwoord vergeten?</LinkHerstel>
+                    <Box as="a" width={510} alignItems="center" textAlign="center" position="absolute" top={250} left={70} href="" onClick={handleHerstel}>Wachtwoord vergeten?</Box>
                     <ButtonPos> 
                         <Button color="secondary" onClick={handleLogin}>Log in</Button>
                     </ButtonPos>  
                 </LoginPlace>
-                <BackgroundImage src={Background} alt="background digilution" /> 
-            </LoginPage>
-        </Body>
+                <Box as="img" backgroundColor="background" src={Background} alt="background digilution" /> 
+            </Box>
+        </Box>
     )
 }
 
-const Body = styled.body` 
-    margin: 0;
-    height: 100%;
-    `
-const LoginPage = styled.div` 
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    `
 const LoginPlace = styled.div` 
     position: fixed;
     width: 663px;
@@ -62,46 +53,15 @@ const LoginPlace = styled.div`
     transform: translate(-50%, -50%);
     background: ${({theme: {colors} }) => colors.primary};
     `
-const BackgroundImage = styled.img` 
-    background: ${({theme: {colors} }) => colors.background};
-    `
-const LogoImage = styled.img` 
-    position: absolute;
-    left: 29.56%;
-    right: 29.56%;
-    top: 7.2%;
-    bottom: 78.92%;
-    width: 270px;
-    height: auto;
-    `   
 const ButtonPos = styled(ButtonField)` 
     position: absolute;
     left: 248px;
     top: 306px;
     `     
-const Welcome = styled.h1` 
-    position: absolute;
-    width: 510px;
-    height: 30px;
-    left: 76px;
-    top: 112px;
-    text-align: center;
-    `
 const Input = styled(TextField)` 
     position: absolute;
     padding-left: 10px;
     left: 155px;    
     top: 187px;
-    `
-const LinkHerstel = styled.a` 
-    position: absolute;
-    left: 248px;
-    top: 250px;
-    align-items: center;
-    text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    color: ${({theme: {colors} }) => colors.white};
     `
 export default Login;

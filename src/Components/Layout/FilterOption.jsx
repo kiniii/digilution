@@ -1,18 +1,13 @@
-import styled from "styled-components";
+import Box from "./Box";
 
 const FilterOption = ({children, onChange}) => {
     return(
         <>
-            <FilterOptionStyle type="checkbox" onChange={onChange}>
+            <Box as="input" width={10} height="auto" type="checkbox" onChange={onChange}>
                 {children} 
-            </FilterOptionStyle>
+            </Box>
         </>
     )
 }
-
-const FilterOptionStyle = styled.input` 
-    width: 10px;
-    height: auto;
-    `
 
 export default FilterOption;

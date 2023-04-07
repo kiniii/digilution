@@ -1,21 +1,16 @@
 import Header from "./Header"
 import Navigation from "./Navigation"
-import styled from "styled-components"
-
+import Box from "./Box"
 
 const Layout = ({title, children}) => {
     return (
-        <Grid>
+        <Box display="grid" gridTemplateColumns="300px 1fr">
             <Navigation />
             <Header title={title} />
             { children }
-        </Grid>
+        </Box>
 
     )
 }
-const Grid = styled.div` 
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    `
 
 export default Layout;

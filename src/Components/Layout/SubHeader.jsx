@@ -16,8 +16,6 @@ const SubHeaderStyle = styled.div`
     margin: 0 1.5rem;
     grid-column-start: 2;
     grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
     display: flex;
     background-color: ${({theme: {colors} }) => colors.darkBackground};
     `

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import Box from '../Layout/Box';
 
 import profile from "../../components/assets/logo.svg"
 
@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
-
 
 const Relation = ({companyName, straat, postcode, stad, statusName}) => {
     const navigate = useNavigate();
@@ -18,62 +17,29 @@ const Relation = ({companyName, straat, postcode, stad, statusName}) => {
 
     return(
         <>
-            <RelationCard onClick={handleRelation}>
-                <Profile>
-                    <ProfilePicture src={profile} alt="" />
-                    <ProfileName>{companyName}</ProfileName>
-                </Profile>
-                <Location>
+            <Box display="flex" justifyContent="space-between" alignItems="center" p="1.5rem" backgroundColor="white" borderBottom={["3px solid"]} borderColor="secondary" onClick={handleRelation}>
+                <Box display="flex" alignItems="center">
+                    <Box as="img" height={64} width={64} borderRadius={64} border={["3px solid"]} borderColor="secondary" src={profile} alt="" />
+                    <Box m={10}>{companyName}</Box>
+                </Box>
+                <Box m={10}>
                     <h1>{straat}</h1>
-                    <LocationRow2 className='location-placement'>
+                    <Box display="flex" className='location-placement'>
                         <h1>{postcode}</h1>
                         <h1>{stad}</h1>
-                    </LocationRow2>
-                </Location>
-                <Contact >
+                    </Box>
+                </Box>
+                <Box m={10}>
                     <FaPhoneAlt />
                     <HiOutlineMail />
                     <TbWorld />
-                </Contact>
-                <Status>
+                </Box>
+                <Box m={10}>
                     <h1>{statusName}</h1>
-                </Status>
-            </RelationCard>
+                </Box>
+            </Box>
         </>
     )
 }
 
-const RelationCard = styled.div` 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background-color: ${({theme: {colors} }) => colors.white};
-    border-bottom: 2.5px solid ${({theme: {colors} }) => colors.secondary};
-    `
-const Profile = styled.div` 
-    display: flex;
-    align-items: center;
-    `
-const ProfilePicture = styled.img` 
-    height: 64px;
-    width: 64px;
-    border-radius: 64px;
-    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
-    `
-const ProfileName = styled.h1` 
-    margin: 10px;
-    `
-const Location = styled.div` 
-    margin: 10px;
-    `
-const LocationRow2 = styled.div` 
-    display: flex;
-    `
-const Contact = styled.div` 
-    margin: 10px;
-    `
-const Status = styled.div` 
-    margin: 10px;
-    `
 export default Relation;

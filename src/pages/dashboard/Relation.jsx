@@ -12,7 +12,8 @@ import profile from "../../components/assets/logo.svg";
 import Popup from "../../components/Popups/Popup";
 import InputPopup from "../../components/Popups/InputPopup";
 import ContactInfo from "../../components/fields/ContactInfo.jsx";
-
+import Box from "../../components/Layout/Box";
+import { Link } from "react-router-dom";
 
 const Relation = () => {
         const contacts = [{test: "test"},{test: "test2"},{test: "test3"}]
@@ -34,42 +35,42 @@ const Relation = () => {
     return (
         <Layout title="Digilution">
             <SubHeader>
-                <NavItem href="/Relation">Overzicht</NavItem>
-                <NavItem href="/RelationProjects">Projecten</NavItem>
-                <NavItem href="/Invoices">Facturen</NavItem>
-                <NavItem href="/Documentation">Documentatie</NavItem>
+                <NavItem to="/Relation">Overzicht</NavItem>
+                <NavItem to="/RelationProjects">Projecten</NavItem>
+                <NavItem to="/Invoices">Facturen</NavItem>
+                <NavItem to="/Documentation">Documentatie</NavItem>
                 <Button color="primary" onClick={toggleDelete}>Verwijder</Button>
             </SubHeader>
-            <Div>
-                <Grid>
+            <Box m="1.5rem" rigth="0%" bottom="0%">
+                <Box display="grid" gridGap="1.5rem" gridTemplateColumns={"1fr 1fr 1fr"}>
                     <Widget >
-                        <Icon onClick={() => setButtonPopup(true)}>
+                        <Box as="a" position="absolute" rigth={15} onClick={() => setButtonPopup(true)}>
                             <AiFillEdit className="icon"/>
-                        </Icon>
+                        </Box>
                         <h1>test</h1>
-                        <Profile src={profile} alt="" />
-                        <ItemProfile>
+                        <Box as="img" m={20} height={150} width={150} borderRadius={150} backgroundColor="white" src={profile} alt="" />
+                        <Box m={20} display="flex" borderRadius={64} alignItems="center" color="white">
                             <p>Adres: </p>
                             <p>{}</p>
-                        </ItemProfile>
-                        <ItemProfile>
+                        </Box>
+                        <Box m={20} display="flex" borderRadius={64} alignItems="center" color="white">
                             <p>Tel-nr: </p>
                             <p>{}</p>
-                        </ItemProfile>
-                        <ItemProfile>
+                        </Box>
+                        <Box m={20} display="flex" borderRadius={64} alignItems="center" color="white">
                             <p>Mail: </p>
                             <p>{}</p>
-                        </ItemProfile>
-                        <ItemProfile>
+                        </Box>
+                        <Box m={20} display="flex" borderRadius={64} alignItems="center" color="white">
                             <p>KVK: </p>
                             <p>{}</p>
-                        </ItemProfile>
+                        </Box>
                     </Widget>
                     <Widget gridColumn={"span 2"}/>
                     <Widget> 
-                        <Icon onClick={() => setButtonPopup(true)}>
+                        <Box as="a" position="absolute" rigth={15} onClick={() => setButtonPopup(true)}>
                             <AiFillEdit className="icon"/>
-                        </Icon>
+                        </Box>
                         <h1>Contacten bedrijf</h1>
                         {
                             contacts.map((contact, index) =>
@@ -78,9 +79,9 @@ const Relation = () => {
                             </div>)
                         }
                     </Widget>
-                    <Widget gridColumn={"span 2"}/>
-                </Grid>
-            </Div>
+                    <Widget gridColumn="span 2"/>
+                </Box>
+            </Box>
 
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <h1>Aanpassen Relatie</h1>
@@ -94,51 +95,20 @@ const Relation = () => {
                     <InputPopup type="email" placeholder="Email.."/>
                     <InputPopup type="text" placeholder="KVK.."/>
                 </div>
-                <ButtonPos>
+                <Box display="flex" justifyContent="space-around">
                     <Button margin={10} color="primary" onClick={() => setButtonPopup(false)}>Annuleren</Button>
                     <Button margin={10} color="secondary"onClick={handleChangeRelation}>Opslaan</Button>
-                </ButtonPos>
+                </Box>
             </Popup>
         </Layout>
     )
 }
-const Grid = styled.div` 
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-    `
-const Div = styled.div` 
-    margin: 1.5rem;
-    right: 0%;
-    bottom: 0%;
-    `
-const NavItem = styled.a` 
+
+const NavItem = styled(Link)` 
     padding: 20px 0px;
     text-decoration: none;
     align-items: center;
     text-align: center;
-    `
-const Profile = styled.img` 
-    margin: 20px;
-    height: 150px;
-    width: 150px;
-    border-radius: 150px;
-    background-color: ${({theme: {colors} }) => colors.white};
-    `
-const ItemProfile = styled.div` 
-    margin: 20px;
-    display: flex;
-    border-radius: 64px;
-    align-items: center;
-    color: ${({theme: {colors} }) => colors.white};
-    `
-const Icon = styled.a` 
-    position: absolute;
-    right: 15px;
-    `
-const ButtonPos = styled.div` 
-    display: flex;
-    justify-content: space-around;
     `
 const ButtonProfileImage = styled.button` 
     margin: 10px;

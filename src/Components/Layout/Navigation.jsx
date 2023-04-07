@@ -16,64 +16,64 @@ const Navigation = () => {
 
     return (
         <Nav>
-            <Box width={200} mt={"10%"} height={"auto"}>
+            <Box width={200} mt="10%" height="auto">
                 <img src={Logo} alt="logo digilution" />
             </Box>
-            <Box width={"100%"} height={64} mt={"10%"} alignItems={"center"} textAlign={"center"}>
+            <Box width="100%" height={64} mt="10%" alignItems="center" textAlign="center">
                 <h1>Welkom {firstName}</h1>
             </Box>
             <div>
                 <NavList>
-                    <Box height={"auto"} flexDirection={"column"} JustifyContent={"space-between"}>
+                    <Box height="auto" flexDirection="column" JustifyContent="space-between">
                     <div>
                     <li>
                         <NavItem to="/dashboard">
-                            <Box ml={"20%"}>
+                            <Box ml="20%">
                                 <FaHome className='icon'/>
                             </Box>
-                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Dashboard</Box>
+                            <Box as="h3" width="80%" textAlign="center" right="0%">Dashboard</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/projects">
-                            <Box ml={"20%"}>
+                            <Box ml="20%">
                                 <IoIosPaper className='icon'/>
                             </Box>
-                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Projecten</Box>
+                            <Box as="h3" width="80%" textAlign="center" right="0%">Projecten</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/relations">
-                            <Box ml={"20%"}>
+                            <Box ml="20%">
                                 <BsPeopleFill className='icon'/>
                             </Box>
-                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Relaties</Box>
+                            <Box as="h3" width="80%" textAlign="center" right="0%">Relaties</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/calendar">
-                            <Box ml={"20%"}>
+                            <Box ml="20%">
                                 <AiFillCalendar className='icon'/>
                             </Box>
-                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Kalender</Box>
+                            <Box as="h3" width="80%" textAlign="center" right="0%">Kalender</Box>
                         </NavItem>
                     </li>
                     </div>
                     <div>
                     <li>
                         <NavItem to="/settings">
-                            <Box ml={"20%"}>
+                            <Box ml="20%">
                                 <RiSettingsFill className='icon'/>
                             </Box>
-                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Instellingen</Box>
+                            <Box as="h3" width="80%" textAlign="center" right="0%">Instellingen</Box>
                         </NavItem>
                     </li>
                     <li>
                         <NavItem to="/">
-                            <Box ml={'20%'}>
+                            <Box ml='20%'>
                                 <RiLogoutBoxLine className='icon'/>
                             </Box>
-                            <Box as="h3" width={"80%"} textAlign={"center"} right={"0%"}>Uitloggen</Box>
+                            <Box as="h3" width="80%" textAlign="center" right="0%">Uitloggen</Box>
                         </NavItem>
                     </li>
                     </div>

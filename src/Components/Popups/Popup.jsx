@@ -1,13 +1,14 @@
 import React from "react"
 import styled from "styled-components";
+import Box from "../Layout/Box";
 
 function Popup(props) {
     return (props.trigger) ? (
         <PopupStyle>
-            <PopupInner>
-                <ButtonClose onClick={() => props.setTrigger(false)}>X</ButtonClose>
+            <Box  width="100%" maxWidth={640} p={32} position="relative" borderRadius={8} border={["3px solid"]} borderColor="secondary" backgroundColor="primary">
+                <Box as="button" position={"absolute"} top={16} right={16} onClick={() => props.setTrigger(false)}>X</Box>
                 { props.children }
-            </PopupInner>
+            </Box>
         </PopupStyle>
     ) : "";
 }
@@ -20,19 +21,5 @@ const PopupStyle = styled.div`
     transform: translate(-50%, -50%);
     justify-content: center;
     align-items: center;
-    `
-const PopupInner = styled.div` 
-    position: relative;
-    padding: 32px;
-    width: 100%;
-    max-width: 640px;
-    background-color: ${({theme: {colors} }) => colors.primary};
-    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
-    border-radius: 8px;
-    `
-const ButtonClose = styled.button` 
-    position: absolute;
-    top: 16px;
-    right: 16px;
     `
 export default Popup;

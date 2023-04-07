@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import Box from "../Layout/Box";
 
 import logo from "../assets/logo.svg";
  
@@ -17,37 +17,17 @@ const Contact = ({contactName}) => {
 
     return(
         <>
-            <ContactCard onClick={handleRelation}>
-                    <ProfilePicture src={logo} alt="" />
-                    <ProfileName>test{contactName}</ProfileName>
-                <Cont>
+            <Box display="flex" justifyContent="space-between" alignItems="center" p="1.5rem" backgroundColor="primary" onClick={handleRelation}>
+                    <Box as="img" height={64} width={64} borderRadius={64} border={["3px solid"]} src={logo} borderColor="secondary" alt="" />
+                    <Box as="h3" m={10}>test{contactName}</Box>
+                <Box width={100}>
                     <FaPhoneAlt className="icon"/>
                     <HiOutlineMail className="icon"/>
                     <TbWorld className="icon"/>
-                </Cont>
-            </ContactCard>
+                </Box>
+            </Box>
         </>
     )
 }
 
-const ContactCard = styled.div` 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    
-    background-color: ${({theme: {colors} }) => colors.primary};
-    `
-const ProfilePicture = styled.img` 
-    height: 64px;
-    width: 64px;
-    border-radius: 64px;
-    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
-    `
-const ProfileName = styled.h3` 
-    margin: 10px;
-    `
-const Cont = styled.div` 
-    width: 100px;
-    `
 export default Contact;

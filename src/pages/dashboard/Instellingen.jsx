@@ -10,6 +10,7 @@ import InputPopup from "../../components/Popups/InputPopup";
 import Search from "../../components/fields/SearchBar";
 import Filter from "../../components/Layout/Filter";
 import FilterOption from "../../components/Layout/FilterOption";
+import Box from "../../components/Layout/Box";
 
 const Instellingen = () => {
     const relations = [{test: "test"},{test: "test2"}]
@@ -45,34 +46,35 @@ const Instellingen = () => {
                 <Button color="secondary" onClick={() => setButtonPopup(true)}>Nieuw</Button>
                 <Button color="primary" onClick={toggleFilter}>Filter</Button>
             </SubHeader>
-            <Content>
-                <RelationHeader>
+            <Box>
+                <Box display="flex" alignItems="center" justifyContent="space-between" p="1.5rem" borderBottom={["15px solid"]} borderColor="secondary">
                     <p>Naam gebruiker</p>
                     <p>Gegevens gebruiker</p>
                     <p>Contactgegevens</p>
                     <p>Gebruikerstype</p>
-                </RelationHeader>
+                </Box>
                 {
                     relations.map((relation, index) =>
                     <div key={index}>
                         <RelationInfo key={relation.id} companyName={relation.companyName} straat={relation.straat} postcode={relation.postcode} stad={relation.stad} statusName={relation.statusName} />
                     </div>)
                 }
-            </Content>
+            </Box>
             
             {filter && <Filter display="block">
                 <h1>Filter</h1>
-                <FilterClick>
+                <Box display={"flex"} alignItems={"center"}>
                     <FilterOption onChange={handleFilterOption1}/>
                     <h3>Optie 1</h3>
-                </FilterClick>
-                <FilterClick>
+                </Box>
+                <Box display={"flex"} alignItems={"center"}>
                     <FilterOption onChange={handleFilterOption1}/>
                     <h3>Optie 2</h3>
-                </FilterClick><FilterClick>
+                </Box>
+                <Box display={"flex"} alignItems={"center"}>
                     <FilterOption onChange={handleFilterOption1}/>
                     <h3>Optie 3</h3>
-                </FilterClick>
+                </Box>
             </Filter>}
 
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
@@ -87,32 +89,15 @@ const Instellingen = () => {
                     <InputPopup type="email" placeholder="Email.."/>
                     <InputPopup type="text" placeholder="KVK.."/>
                 </div>
-                <ButtonPos>
+                <Box display={"flex"} justifyContent={"space-around"}>
                     <Button margin={10} color="primary" onClick={() => setButtonPopup(false)}>Annuleren</Button>
                     <Button margin={10} color="secondary"onClick={handleNewUser}>Opslaan</Button>
-                </ButtonPos>
+                </Box>
             </Popup>
         </Layout>
     )
 }
-const FilterClick = styled.div` 
-    display: flex;
-    align-items: center;
-    `
-const RelationHeader = styled.div` 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 15px solid ${({theme: {colors} }) => colors.secondary};
-    padding: 1.5rem;
-    `
-const Content = styled.div` 
 
-    `
-const ButtonPos = styled.div` 
-    display: flex;
-    justify-content: space-around;
-    `
 const ButtonProfileImage = styled.button` 
     margin: 10px;
     height: 100px;

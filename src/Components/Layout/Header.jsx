@@ -21,17 +21,17 @@ const Header = ({title}) => {
     return(
         <>
             <HeaderStyle>
-                <Box display={"flex"} m= {[0, "1.5rem"]} width={"60%"}>
-                    <ButtonBack onClick={handleBack}>
+                <Box display="flex" m= {[0, "1.5rem"]} width="60%">
+                    <Box as="button" backgroundColor="primary" border="none" onClick={handleBack}>
                         <MdArrowBackIosNew className='icon'/>
-                    </ButtonBack>
-                    <Box as="h1" alignItems={"center"} display={"flex"}>{title}</Box>
+                    </Box>
+                    <Box as="h1" alignItems="center" display="flex">{title}</Box>
                 </Box>
-                <Box display={"flex"} m= {[0, "1.5rem"]} width={"20%"} alignItems={"center"} justifyContent={"right"}>
+                <Box display="flex" m= {[0, "1.5rem"]} width="20%" alignItems="center" justifyContent="right">
                     <AiFillBell className='icon'/>
-                    <ButtonBack onClick={handleProfile}>
-                        <Profile src={profile} alt="" />
-                    </ButtonBack>
+                    <Box as="button" backgroundColor="primary" border="none" onClick={handleProfile}>
+                        <Box as="img" height={64} width={64} borderRadius={64} border={["3px solid"]} borderColor="secondary" src={profile} alt="" />
+                    </Box>
                 </Box>
             </HeaderStyle>
         </>
@@ -45,15 +45,5 @@ const HeaderStyle = styled.div`
     display: flex;
     justify-content: space-between;
     background-color: ${({theme: {colors} }) => colors.primary};
-    `
-const ButtonBack = styled.button` 
-    background-color: ${({theme: {colors} }) => colors.primary};
-    border: none;
-    `
-const Profile = styled.img` 
-    height: 64px;
-    width: 64px;
-    border-radius: 64px;
-    border: 2.5px solid ${({theme: {colors} }) => colors.secondary};
     `
 export default Header;

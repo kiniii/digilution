@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import TextField from "./TextField";
 
-
 const Search = ({children, onChange, placeholder}) => {
     return (
         <SearchBar type="text" onChange={onChange} placeholder={placeholder}>

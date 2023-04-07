@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
 import React from "react";
-import styled from "styled-components";
+import Box from "../../components/Layout/Box";
 
 import Widget from "../../components/fields/Widget";
 import Layout from "../../components/Layout/Layout"
 
 const Dashboard = () => {
-    const [count, setCount] = useState(0);
-
     return (
         <Layout title="Dashboard">
-            <Div>
-                <Grid>
+            <Box m="1.5rem" rigth="0%" bottom="0%">
+                <Box display="grid" gridGap="1.5rem" gridTemplateColumns={"1fr 1fr 1fr"}>
                     <Widget gridColumn={"span 2"}>
                         <h1>Test</h1>
                     </Widget>
@@ -19,21 +16,10 @@ const Dashboard = () => {
                     <Widget />
                     <Widget />
                     <Widget />
-                </Grid>
-            </Div>
-            
+                </Box>
+            </Box>
         </Layout>
     )
 }
-const Grid = styled.div` 
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
 
-    `
-const Div = styled.div` 
-    margin: 1.5rem;
-    right: 0%;
-    bottom: 0%;
-    `
 export default Dashboard;

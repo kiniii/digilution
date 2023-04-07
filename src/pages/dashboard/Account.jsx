@@ -1,36 +1,24 @@
-import { useEffect, useState } from "react";
-import Layout from "../../components/Layout/Layout"
-import styled from "styled-components";
+import Layout from "../../components/Layout/Layout";
 import Widget from "../../components/fields/Widget";
+import Box from "../../components/Layout/Box";
 
 const Account = () => {
-    return (
-        <Layout title="Account">
-            <Div>
-                <Grid>
-                    <Widget >
-                        <h1>Test</h1>
-                    </Widget>
-                    <Widget />
-                    <Widget />
-                    <Widget />
-                    <Widget />
-                    <Widget />
-                </Grid>
-            </Div>
-            
-        </Layout>
-    )
-}
-const Grid = styled.div` 
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
+  return (
+    <Layout title="Account">
+      <Box m="1.5rem" rigth="0%" bottom="0%">
+        <Box display="grid" gridGap="1.5rem" gridTemplateColumns={"1fr 1fr 1fr"}>
+          <Widget>
+            <h1>Test</h1>
+          </Widget>
+          <Widget />
+          <Widget />
+          <Widget />
+          <Widget />
+          <Widget />
+        </Box>
+      </Box>
+    </Layout>
+  );
+};
 
-    `
-const Div = styled.div` 
-    margin: 1.5rem;
-    right: 0%;
-    bottom: 0%;
-    `
 export default Account;

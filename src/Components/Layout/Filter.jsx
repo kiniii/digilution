@@ -13,10 +13,6 @@ const Filter = ({children, display}) => {
 
 const FilterStyle = styled.div` 
     padding: 0px 30px;
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 3;
-    grid-row-end: 8;
     background-color: ${({theme: {colors} }) => colors.lightBackground};
     ${display}
     `
