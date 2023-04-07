@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components";
-import TextField from "../fields/TextField";
+import TextField from "./fields/TextField";
 
 const InputPopup = ({onChange, type, value, placeholder}) => {
     return(

@@ -19,5 +19,6 @@ const SubHeaderStyle = styled.div`
     grid-row-end: 3;
     display: flex;
     background-color: ${({theme: {colors} }) => colors.darkBackground};
+    width: 100%;
     `
 export default SubHeader;

@@ -9,7 +9,7 @@ import InputPopup from "../../components/Popups/InputPopup";
 import Search from "../../components/fields/SearchBar";
 import Filter from "../../components/Layout/Filter";
 import FilterOption from "../../components/Layout/FilterOption";
-import Widget from "../../components/fields/Widget";
+import Widget from "../../Components/fields/Widget";
 //import SubHeader from "../../components/Layout/SubHeader";
 import ProjectsBox from "../../Components/ProjectsBox";
 //import ProgressBar from "../../Components/ProgressBar";
@@ -34,7 +34,6 @@ const Projecten = () => {
     const navigate = useNavigate();
 
     const handlePageRedirect = () => {
-        console.log("handlepageredirect is gelukt");
         navigate("/project");
     }
 

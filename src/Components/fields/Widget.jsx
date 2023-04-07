@@ -5,7 +5,6 @@ const Widget = ({children, minHeight, gridColumn, width, onClick}) => {
     return(
         <>
             <WidgetStyle minHeight={minHeight} gridColumn={gridColumn} width={width} onClick={onClick}>
-                console.log({onClick});
                 {children} 
             </WidgetStyle>
         </>

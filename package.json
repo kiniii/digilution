@@ -9,12 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
+    "react-big-calendar": "^1.6.9",
+    "react-datepicker": "^4.11.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "styled-components": "^5.3.9",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "yallist": "^4.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

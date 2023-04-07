@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import TextField from "./TextField";
+import TextField from "../TextField";
 
 
 const Search = ({children, onChange, placeholder}) => {
