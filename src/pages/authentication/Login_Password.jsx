@@ -7,6 +7,7 @@ import Logo from "./assets/logo.svg"
 import Button from "../../components/buttons/Button";
 import TextField from "../../components/fields/TextField";
 import ButtonField from "../../components/buttons/ButtonField";
+import Box from "../../Components/Layout/Box";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -25,36 +26,22 @@ const Login = () => {
         alert("link om te herstellen")
     }
 
-    const handleHerstel = () => {
-        alert("link herstel")
-    }
-
     return (
-        <Body>
-            <LoginPage>  
+        <Box width="100%" height="100%" position="absolute" style={{overflowX:"hidden"}}> 
                 <LoginPlace>
                     <LogoImage src={Logo} alt="logo digilution" />
-                    <Welcome>Welkom terug</Welcome>
+                    <Box as="h1" position="absolute" width={510} height={30} left={76} top={112} textAlign="center">Welkom terug</Box>
                     <Input type="password" value={password} onChange={handlePassword} placeholder="password"/>
-                    <LinkHerstel href="" onClick={handleHerstel}>Wachtwoord vergeten?</LinkHerstel>
+                    <LinkHerstel href="" onClick={handleRecover}>Wachtwoord vergeten?</LinkHerstel>
                     <ButtonPos> 
                         <Button color="secondary" onClick={handleLogin}>Log in</Button>
                     </ButtonPos>  
                 </LoginPlace>
                 <BackgroundImage src={Background} alt="background digilution" /> 
-            </LoginPage>
-        </Body>
+        </Box>
     )
 }
 
-const Body = styled.body` 
-    margin: 0;
-    overflow: hidden;
-    `
-const LoginPage = styled.div` 
-    height: 100%;
-    
-    `
 const LoginPlace = styled.div` 
     position: fixed;
     width: 663px;
@@ -81,14 +68,6 @@ const ButtonPos = styled(ButtonField)`
     left: 248px;
     top: 306px;
     `     
-const Welcome = styled.h1` 
-    position: absolute;
-    width: 510px;
-    height: 30px;
-    left: 76px;
-    top: 112px;
-    text-align: center;
-    `
 const Input = styled(TextField)` 
     position: absolute;
     padding-left: 10px;

@@ -14,7 +14,7 @@ import Relations from "./pages/dashboard/Relations"
 import Calendar from "./pages/dashboard/Calendar"
 import Instellingen from "./pages/dashboard/Instellingen"
 import Account from "./pages/dashboard/Account"
-import Project from "./Components/ProjectsPage"
+import Project from "./pages/dashboard/ProjectsPage"
 
 function App() {
     const router = createBrowserRouter([

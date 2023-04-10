@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { MdArrowBackIosNew } from "react-icons/md"
 import { AiFillBell } from "react-icons/ai"
 import profile from "../assets/logo.svg"
+import Box from './Box';
 
 const Header = ({title}) => {
     const navigate = useNavigate();
@@ -19,18 +20,18 @@ const Header = ({title}) => {
     return(
         <>
             <HeaderStyle>
-                <Left>
-                    <ButtonBack onClick={handleBack}>
+                <Box display="flex" m={[0, "1.5rem"]} width="60%" justifyContent="left">
+                    <Box onClick={handleBack} as="button" backgroundColor="primary" border="none">
                         <MdArrowBackIosNew className='icon'/>
-                    </ButtonBack>
-                    <PageName>{title}</PageName>
-                </Left>
-                <Right>
+                    </Box>
+                    <Box display="flex" alignItems="center" as="h1">{title}</Box>
+                </Box>
+                <Box display="flex" m={[0, "1.5rem"]} width="20%" justifyContent="right">
                     <AiFillBell className='icon'/>
-                    <ButtonBack onClick={handleProfile}>
+                    <Box onClick={handleProfile} as="button" backgroundColor="primary" border="none">
                         <Profile src={profile} alt="" />
-                    </ButtonBack>
-                </Right>
+                    </Box>
+                </Box>
             </HeaderStyle>
         </>
     )
@@ -42,28 +43,6 @@ const HeaderStyle = styled.div`
     grid-column-start: 2;
     grid-column-end: 6;
     padding: 20px 0;
-    `
-const Left = styled.div` 
-    margin-left: 20%;
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    color: white;
-    `
-const Right = styled.div` 
-    margin-right: 2%;
-    display: flex;
-    align-items: center;
-    width: 30%;
-    `
-const ButtonBack = styled.button` 
-    background-color: ${({theme: {colors} }) => colors.primary};
-    border: none;
-    `
-const PageName = styled.h1` 
-    margin-left: 2%;
-    display: flex;
-    align-items: center;
     `
 const Profile = styled.img` 
     height: 64px;

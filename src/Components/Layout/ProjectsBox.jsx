@@ -1,5 +1,5 @@
 import React from "react";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "../ProgressBar";
 
 const TestData = [
     { bgcolor: "#f95b1c", completed: 60 }

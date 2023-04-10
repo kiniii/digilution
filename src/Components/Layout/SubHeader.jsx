@@ -15,10 +15,7 @@ const SubHeaderStyle = styled.div`
     padding: 30px 0px;
     grid-column-start: 2;
     grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
     display: flex;
     background-color: ${({theme: {colors} }) => colors.darkBackground};
-    width: 100%;
     `
 export default SubHeader;

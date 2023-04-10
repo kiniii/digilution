@@ -3,10 +3,6 @@ import React from "react";
 import { Calendar, momentLocalizer, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css"
-import format from "date-fns/format";
-import parse from "date-fns/parse";
-import startOfWeek from "date-fns/getDay";
-import getDay from "date-fns/getDay";
 import DatePicker from "react-datepicker";
 import moment from 'moment';
 import styled from "styled-components";
@@ -15,6 +11,7 @@ import Layout from "../../components/Layout/Layout";
 import SubHeader from "../../components/Layout/SubHeader";
 import Button from "../../components/buttons/Button";
 import Input from "../../Components/fields/InputField";
+import Box from "../../components/Layout/Box";
 
 // Local date handler
 const localizer = momentLocalizer(moment);
@@ -37,41 +34,36 @@ const events = [
     }
 ];
 const Kalender = () => {
-const [newEvent, setNewEvent] = useState({title: "", start: "", end: ""})
-const [allEvents, setAllEvents] = useState(events);
+    const [newEvent, setNewEvent] = useState({title: "", start: "", end: ""})
+    const [allEvents, setAllEvents] = useState(events);
 
-const handleAddEvent = () => {
-    setAllEvents([...allEvents, newEvent])
-};
+    const handleAddEvent = () => {
+        setAllEvents([...allEvents, newEvent])
+    };
 
-return(
-    <Layout title="Kalender">
-        <SubHeader> 
-            <Div>
-                <h2>Nieuw</h2>
-                <div>
-                    <Input type="text" placeholder="Voeg titel toe" style={{width: "20%", marginRight: "10px"}} value={newEvent.title} onChange= {(e) => setNewEvent({...newEvent, title: e.target.value})} />
+    return(
+        <Layout title="Kalender">
+            <SubHeader> 
+                <Box color="primary">
+                    <h2>Nieuw</h2>
+                    <div>
+                        <Input type="text" placeholder="Voeg titel toe" style={{width: "20%", marginRight: "10px"}} value={newEvent.title} onChange= {(e) => setNewEvent({...newEvent, title: e.target.value})} />
 
-                    <DatePicker placeholderText="Begindatum" style={{marginRight: "10px"}} selected={newEvent.start} onChange={(start)=> setNewEvent({...newEvent, start})} />
-                    <DatePicker placeholderText="Einddatum" selected={newEvent.end} onChange={(end)=> setNewEvent({...newEvent, end})} />
-                    <Button color="secondary" style={{marginTop: "10px"}} onClick={handleAddEvent}>Nieuw</Button>
-                </div>
-                <Calendar 
+                        <DatePicker placeholderText="Begindatum" style={{marginRight: "10px"}} selected={newEvent.start} onChange={(start)=> setNewEvent({...newEvent, start})} />
+                        <DatePicker placeholderText="Einddatum" selected={newEvent.end} onChange={(end)=> setNewEvent({...newEvent, end})} />
+                        <Button color="secondary" style={{marginTop: "10px"}} onClick={handleAddEvent}>Nieuw</Button>
+                    </div>
+                    <Calendar 
                     localizer={localizer}
                     events={allEvents}
                     startAccessor="start"
                     endAccessor="end"
                     style={{margin: '20px', height: 500 }}
-                />
-            </Div>
-        </SubHeader>
-    </Layout>
-);
+                    />
+                </Box>
+            </SubHeader>
+        </Layout>
+    );
 };
-
-const Div = styled.div`
-    color: white;
-`
-
 
 export default Kalender;

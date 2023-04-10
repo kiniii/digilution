@@ -10,9 +10,7 @@ import Search from "../../components/fields/SearchBar";
 import Filter from "../../components/Layout/Filter";
 import FilterOption from "../../components/Layout/FilterOption";
 import Widget from "../../Components/fields/Widget";
-//import SubHeader from "../../components/Layout/SubHeader";
-import ProjectsBox from "../../Components/ProjectsBox";
-//import ProgressBar from "../../Components/ProgressBar";
+import ProjectsBox from "../../Components/Layout/ProjectsBox";
 
 const Projecten = () => {
     const [filter, setFilter] = useState(false);

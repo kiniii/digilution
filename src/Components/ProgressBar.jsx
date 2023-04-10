@@ -1,7 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-import thema from "../thema";
-import { ThemeProvider } from "styled-components";
 
 const ProgressBar = (props) => {
     const { bgcolor, completed } = props;

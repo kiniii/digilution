@@ -7,6 +7,7 @@ import Logo from "./assets/logo.svg"
 import Button from "../../components/buttons/Button";
 import ButtonField from "../../components/buttons/ButtonField";
 import TextField from "../../components/fields/TextField";
+import Box from "../../Components/Layout/Box";
 
 
 const Login = () => {
@@ -23,29 +24,20 @@ const Login = () => {
     }
 
     return (
-        <Body>
-            <LoginPage>  
+        <Box width="100%" height="100%" position="absolute" style={{overflowX:"hidden"}}>
                 <LoginPlace>
                     <LogoImage src={Logo} alt="logo digilution" />
-                    <Welcome>Welkom terug</Welcome>
+                    <Box as="h1" position="absolute" width={510} height={30} left={76} top={112} textAlign="center" >Welkom terug</Box>
                     <Input type="email" value={email} onChange={handleEmail} placeholder="email" />
                     <ButtonPos> 
                         <Button color="secondary" onClick={handleLogin}>Log in</Button>
                     </ButtonPos> 
                 </LoginPlace>
-                <BackgroundImage src={Background} alt="background digilution" /> 
-            </LoginPage>
-        </Body>
+            <BackgroundImage src={Background} alt="background digilution" /> 
+        </Box>
     )
 }
 
-const Body = styled.body` 
-    margin: 0;
-    `
-const LoginPage = styled.div` 
-    height: 100%;
-    overflow: hidden;
-    `
 const LoginPlace = styled.div` 
     position: fixed;
     width: 663px;
@@ -72,14 +64,6 @@ const ButtonPos = styled(ButtonField)`
     left: 248px;
     top: 306px;
     `     
-const Welcome = styled.h1` 
-    position: absolute;
-    width: 510px;
-    height: 30px;
-    left: 76px;
-    top: 112px;
-    text-align: center;
-    `
 const Input = styled(TextField)` 
     position: absolute;
     width: 340px;

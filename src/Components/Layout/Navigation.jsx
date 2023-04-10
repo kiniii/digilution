@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Logo from "../assets/logo.svg"
 import styled from "styled-components";
+import Box from "./Box";
 
 import { FaHome } from "react-icons/fa";
 import { IoIosPaper } from "react-icons/io";
@@ -15,82 +16,67 @@ const Navigation = () => {
 
     return (
         <Nav>
-            <div>
+            <Box width={200} height="auto">
                 <LogoNav src={Logo} alt="logo digilution" />
-            </div>
-            <div>
-                <Welcome>Welkom {firstName}</Welcome>
-            </div>
-            <div>
+            </Box>
+            <Box position="absolute" top="13%" alignItems="center" textAlign="center">
+                <h1>Welkom {firstName}</h1>
+            </Box>
                 <NavList>
+                    <Box height="auto" flexDirection="column" justifyContent="space-between">
+                    <TopNavContainer>
                         <NavItem to="/dashboard">
-                            <GroupIconText>
-                            <IconPos>
+                            <Box ml="20%">
                                 <FaHome className='icon'/>
-                            </IconPos>
-                            <Text>Dashboard</Text>
-                            </GroupIconText>
+                            </Box>
+                            <Box as="h3" width="60%" textAlign="center">Dashboard</Box>
                         </NavItem>
                         <NavItem to="/projects">
-                            <GroupIconText>
-                            <IconPos>
+                            <Box ml="20%">
                                 <IoIosPaper className='icon'/>
-                            </IconPos>
-                            <Text>Projecten</Text>
-                            </GroupIconText>
+                            </Box>
+                            <Box as="h3" width="60%" textAlign="center">Projecten</Box>
                         </NavItem>
                         <NavItem to="/relations">
-                            <GroupIconText>
-                            <IconPos>
+                            <Box ml="20%">
                                 <BsPeopleFill className='icon'/>
-                            </IconPos>
-                            <Text>Relaties</Text>
-                            </GroupIconText>
+                            </Box>
+                            <Box as="h3" width="60%" textAlign="center">Relaties</Box>
                         </NavItem>
                         <NavItem to="/calendar">
-                            <GroupIconText>
-                            <IconPos>
+                            <Box ml="20%">
                                 <AiFillCalendar className='icon'/>
-                            </IconPos>
-                            <Text>Kalender</Text>
-                            </GroupIconText>
+                            </Box>
+                            <Box as="h3" width="60%" textAlign="center">Kalender</Box>
                         </NavItem>
+                    </TopNavContainer>
                     <BottomNavContainer>
                         <NavItem to="/settings">
-                            <GroupIconText>
-                            <IconPos>
+                            <Box ml="20%">
                                 <RiSettingsFill className='icon'/>
-                            </IconPos>
-                            <Text>Instellingen</Text>
-                            </GroupIconText>
+                            </Box>
+                            <Box as="h3" width="60%" textAlign="center">Instellingen</Box>
                         </NavItem>
                         <NavItem to="/">
-                            <GroupIconText>
-                            <IconPos>
+                            <Box ml="20%">
                                 <RiLogoutBoxLine className='icon'/>
-                            </IconPos>
-                            <Text>Uitloggen</Text>
-                            </GroupIconText>
+                            </Box>
+                            <Box as="h3" width="60%" textAlign="center">Uitloggen</Box>
                         </NavItem>
                     </BottomNavContainer>
+                    </Box>
                 </NavList>
-            </div>
         </Nav>
     )
 }
     const Nav = styled.div` 
-    display: flex;
-    width: 328px;
+    position: sticky;
     height: 100vh;
     background-color: ${({theme: {colors} }) => colors.primary};
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 8;
-    `
-    const IconPos = styled.div` 
-    display: flex;
-    flex-direction: column;
     `
     const LogoNav = styled.img` 
     display: flex;
@@ -103,37 +89,29 @@ const Navigation = () => {
     height: auto;
     `
     const NavList = styled.ul` 
-    margin-top: 50px;
-    flex-direction: column;
+    margin: 10% 0;
+    padding: 0;
     list-style: none;
-    `
-    const Welcome = styled.h3` 
-    position: absolute;
-    width: 328px;
-    top: 13%;
-    align-items: center;
-    text-align: center;
-    color: white;
+    height: 100vh;
     `
     const NavItem = styled(Link)` 
+    display: flex;
     text-decoration: none;
+    padding: 10px 15px;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
     &:hover {
         background: linear-gradient(270deg, #F95B1C 0%, rgba(255, 255, 255, 0) 33.84%);
     }   
     `
-    const Text = styled.h5` 
-    display: flex;
-    text-align: center;
-    `
-    const GroupIconText = styled.div`
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    gap: 15px;
-    `
     const BottomNavContainer = styled.div`
     position: absolute;
     bottom: 0;
-    height 200px;
+    height: 200px;
+    `
+    const TopNavContainer = styled.div`
+    position: absolute;
+    height: 200px;
     `
 export default Navigation
