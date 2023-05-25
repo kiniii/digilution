@@ -2,7 +2,7 @@ import React from "react";
 import Box from "../../components/Layout/Box";
 
 import Widget from "../../components/fields/Widget";
-import Layout from "../../components/Layout/Layout"
+import Layout from "../../components/Layout/Layout";
 
 const Dashboard = () => {
     return (
